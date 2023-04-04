@@ -1,0 +1,3643 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+
+% Variables to change every new document
+
+\newcommand{\hmwkClass}{\selectlanguage{english}Intro to Machine Learning} % Course/class
+\newcommand{\hmwkNumber}{2} % Assignment number
+
+% Constants to set once
+\newcommand{\hmwkAuthorName}{\selectlanguage{english}Dor Bourshan} % Your name
+\newcommand{\hmwkUserID}{315780122} % User ID
+
+
+% Packages
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{tikz}
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \protect\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+% General document properties
+\linespread{1.1} % Line spacing
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+
+% Make a simple command for use in document body
+\newcommand{\start}{
+\maketitle
+\thispagestyle{empty}
+\newpage
+}
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName} % Top left header
+\rhead{\hmwkClass:\ Assignment\ \#\hmwkNumber}
+
+
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+
+
+% The following 2 commands setup the title page
+\title{
+\vspace{2in}
+\textmd{\textbf{\hmwkClass:\ Assignment\ \#\hmwkNumber}}\\
+\normalsize\vspace{0.1in}\small{ \today }\\
+\vspace{3in}
+}
+
+\author{
+  \textbf{\hmwkAuthorName} \\
+  \texttt{\hmwkUserID \hspace{0.1in} \hmwkStudentNumber}
+}
+
+% Do not display standard date since we use a custom date
+\date{}
+
+% make sure you have these fonts, otherwise replace them
+\newfontfamily\hebrewfont{David}[Script=Hebrew]
+\newfontfamily\hebrewfontsf{David}[Script=Hebrew]
+\newfontfamily\hebrewfonttt{David}[Script=Hebrew]
+
+
+\iffalse % set this to false if you want Latin Modern and not New Computer Modern
+
+\newfontfamily\englishfont[%
+  SizeFeatures={%
+{Size=-8, Font=NewCM08-Regular.otf,
+      ItalicFont=NewCM08-Italic.otf,%
+      BoldFont=NewCM10-Bold.otf,%
+      BoldItalicFont=NewCM10-BoldItalic.otf,%
+      SlantedFont=NewCM08-Regular.otf,%
+      BoldSlantedFont=NewCM10-Bold.otf,%
+      SmallCapsFeatures={Numbers=OldStyle}},
+{Size=8, Font=NewCM08-Regular.otf,
+      ItalicFont=NewCM08-Italic.otf,%
+      BoldFont=NewCM10-Bold.otf,%
+      BoldItalicFont=NewCM10-BoldItalic.otf,%
+      SlantedFont=NewCM08-Regular.otf,%
+      BoldSlantedFont=NewCM10-Bold.otf,%
+      SmallCapsFeatures={Numbers=OldStyle}},
+{Size= 9-, Font = NewCM10-Regular.otf,
+      ItalicFont=NewCM10-Italic.otf,%
+      BoldFont=NewCM10-Bold.otf,%
+      BoldItalicFont=NewCM10-BoldItalic.otf,%
+      SlantedFont=NewCM10-Regular.otf,%
+      BoldSlantedFont=NewCM10-Bold.otf,%
+      SmallCapsFeatures={Numbers=OldStyle}}%
+  },%
+  SmallCapsFeatures={Numbers=OldStyle},%
+  BoldSlantedFont=NewCM10-Bold.otf,%
+  SlantedFont=NewCM10-Regular.otf,%
+  BoldItalicFont=NewCM10-BoldItalic.otf,%
+  BoldFont=NewCM10-Bold.otf,%
+  ItalicFont=NewCM10-Italic.otf,%
+  SlantedFeatures={FakeSlant=0.25},%
+  BoldSlantedFeatures={FakeSlant=0.25},%
+]{NewCM10-Regular.otf}
+
+\newfontfamily\englishfontsf[%
+    SizeFeatures={%
+{Size= -8, Font=NewCMSans08-Regular.otf,%
+           ItalicFont=NewCMSans08-Oblique.otf,%
+           BoldFont=NewCMSans10-Bold.otf,%
+           BoldItalicFont=NewCMSans10-BoldOblique.otf,%
+           SmallCapsFeatures={Numbers=OldStyle},%
+},
+{Size= 8, Font=NewCMSans08-Regular.otf,%
+          ItalicFont=NewCMSans08-Oblique.otf,%
+          BoldFont=NewCMSans10-Bold.otf,%
+          BoldItalicFont=NewCMSans10-BoldOblique.otf,%
+          SmallCapsFeatures={Numbers=OldStyle},%
+},
+{Size= 9-, Font=NewCMSans10-Regular.otf,%
+           ItalicFont=NewCMSans10-Oblique.otf,%
+           BoldFont=NewCMSans10-Bold.otf,%
+           BoldItalicFont=NewCMSans10-BoldOblique.otf,%
+           SmallCapsFeatures={Numbers=OldStyle},%
+}},
+           ItalicFont=NewCMSans10-Oblique.otf,%
+           BoldFont=NewCMSans10-Bold.otf,%
+           BoldItalicFont=NewCMSans10-BoldOblique.otf,%
+           SmallCapsFeatures={Numbers=OldStyle},%
+           SlantedFont=NewCMSans10-Oblique.otf,%
+           BoldSlantedFont=NewCMSans10-BoldOblique.otf,%
+]{NewCMSans10-Regular.otf}
+
+\newfontfamily\englishfonttt[%
+ItalicFont=NewCMMono10-Italic.otf,%
+BoldFont=NewCMMono10-Bold.otf,%
+BoldItalicFont=NewCMMono10-BoldOblique.otf,%
+SlantedFont=NewCMMono10-Regular.otf,%
+SlantedFeatures={FakeSlant=0.25},
+BoldSlantedFont=NewCMMono10-Bold.otf,%
+BoldSlantedFeatures={FakeSlant=0.25},
+SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
+
+\usepackage{unicode-math}
+\setmathfont{NewCMMath-Book.otf}
+\setmathfont{NewCMMath-Book.otf}[version=bold,FakeBold=3]
+\else
+\setmathrm{Latin Modern Math}
+\fi
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 2cm
+\headsep 2cm
+\footskip 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+start
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\E}{\mathbb{E}}
+{\mathbb{E}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\norm}{\|\boldsymbol{\mathbf{x}}\|_{2}}
+{\|\boldsymbol{\mathbf{x}}\|_{2}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\Var}{\mathrm{Var}}
+{\mathbf{\mathrm{Var}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\Cov}{\mathrm{Cov}}
+{\mathbf{\mathrm{Cov}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\x}{\boldsymbol{\mathbf{x}}}
+{\boldsymbol{\mathbf{x}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\v}{\boldsymbol{\mathbf{v}}}
+{\boldsymbol{\mathbf{v}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\y}{\boldsymbol{\mathbf{y}}}
+{\boldsymbol{\mathbf{y}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\c}{\boldsymbol{\mathbf{c}}}
+{\mathbf{\boldsymbol{c}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\b}{\mathbf{\boldsymbol{b}}}
+{\boldsymbol{\mathbf{b}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\L}{\mathcal{L}}
+{\mathcal{L}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\vecx}{X_{1},\ldots,X_{n}}
+{X_{1},\ldots,X_{n}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\vecy}{Y_{1},\ldots,Y_{m}}
+{Y_{1},\ldots,Y_{m}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\Y}{\mathcal{Y}}
+{\mathcal{Y}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\X}{\mathcal{X}}
+{\mathcal{X}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\H}{\mathcal{H}}
+{\mathcal{H}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset FormulaMacro
+\newcommand{\A}{\mathcal{A}}
+{\mathcal{A}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Theory Questions
+\end_layout
+
+\begin_layout Section
+PAC learnability of 
+\begin_inset Formula $\ell_{2}$
+\end_inset
+
+-balls around the origin
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+draw [->] (0,0,0) -- (3,0,0) node [right] {$x$};  
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw [->] (0,0,0) -- (0,3,0) node [left] {$y$};  
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw [->] (0,0,0) -- (0,0,5) node [left] {$z$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+shade[ball color = gray!20, opacity = 0.4] (0,0) circle (2cm); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+shade[ball color = gray!40, opacity = 0.4] (0,0) circle (1.5cm); 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+draw (0,0) circle (2cm); 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+draw (-2,0) arc (180:360:2 and 0.75);
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+draw (0,0) circle (1.5cm); 
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+draw (-1.5,0) arc (180:360:1.5 and 0.4);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[dashed] (2,0) arc (0:180:2 and 0.75);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+fill[fill=black] (0,0) circle (1pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[dashed] (0,0 ) -- node[above]{$R_{0}$} (1.5,-0.5); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[dashed] (1.5,0) arc (0:180:1.5 and 0.4);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[dashed] (0,0 ) -- node[above]{$R$} (-0.7,-0.3); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[dashed] (-1.5,0 ) -- node[above]{$C$} (-2,0); 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\lang hebrew
+הגדרה:
+\series default
+ בהינתן מספר ממשי 
+\begin_inset Formula $R\geq0$
+\end_inset
+
+ מגדירים את ההיפוטזה 
+\begin_inset Formula $h_{R}:\mathbb{R}^{d}\rightarrow\left\{ 0,1\right\} $
+\end_inset
+
+ כ : 
+\begin_inset Formula 
+\[
+h_{R}\left(\x\right)=\begin{cases}
+1 & \norm\leq R\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נסמן :
+\begin_inset Formula 
+\[
+\H_{ball}=\left\{ h_{R}\mid R\geq0\right\} 
+\]
+
+\end_inset
+
+ נוכיח באופן ישיר כי מחלקת ההיפותזות 
+\begin_inset Formula $\H_{ball}$
+\end_inset
+
+ למידת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PAC
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ במקרה ה 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+realizable
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אנו צריכים להראות שקיים אלגוריתם 
+\begin_inset Formula $\A$
+\end_inset
+
+ כך ש לכל 
+\begin_inset Formula $\varepsilon,\delta>0$
+\end_inset
+
+ קיימת פונקציה 
+\begin_inset Formula $N:\left(0,1\right)\times\left(0,1\right)\rightarrow\mathbb{N}$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $n\geq N\left(\varepsilon,\delta\right)$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula 
+\[
+\forall P\in R\left(\H_{ball}\right)\ \ :\ \ \Pr\left[e_{P}\left(\A\left(S_{n}\right)\right)\leq\varepsilon\right]\geq1-\delta
+\]
+
+\end_inset
+
+או לחלופין 
+\begin_inset Formula 
+\[
+\Pr\left[e_{P}\left(\A\left(S_{n}\right)\right)>\varepsilon\right]<\delta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נגדיר את האלגוריתם הבא 
+\begin_inset Formula $\A_{ball}$
+\end_inset
+
+ : 
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+בהינתן 
+\begin_inset Formula $n$
+\end_inset
+
+ דגימות 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ נגדיר את הקבוצה 
+\begin_inset Formula $S_{1}$
+\end_inset
+
+ להיות קבוצת הדגימות מתוייגות 
+\begin_inset Formula $'1'$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+נגדיר 
+\begin_inset Formula 
+\[
+R=\max_{\x\in S_{1}}\norm
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+נחזיר 
+\begin_inset Formula $h_{R}\left(x\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+מהיותה של המחלקה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+realizable
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ השגיאה היחידה היא עבור 
+\begin_inset Formula $\x$
+\end_inset
+
+ המתוייגים 
+\begin_inset Formula $'1'$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $R<\norm\leq R_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נגדיר 
+\begin_inset Formula 
+\[
+R_{0}\backslash R=\left\{ \x\mid R<\norm\leq R_{0}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אנו מעוניינים לתת הערכה הסתברותית לשגיאה של האלגוריתם, כלומר לתת הערכה הסתברותית
+ לנקודות שנופלות ב 
+\begin_inset Formula $R_{0}\backslash R$
+\end_inset
+
+ כיוון שנקודות אלו מתוייגות כ 
+\begin_inset Formula $'0'$
+\end_inset
+
+ למרות שאמורות להיות מתוייגות כ 
+\begin_inset Formula $'1'$
+\end_inset
+
+.
+ נשים לב כי 
+\begin_inset Formula $R\leq R_{0}$
+\end_inset
+
+ שוב, מהיותה של המחלקה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+realizable
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אנו מניחים כי 
+\begin_inset Formula 
+\[
+\Pr\left[R_{0}\right]>\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אחרת 
+\begin_inset Formula 
+\[
+\Pr\left[R_{0}\backslash R\right]\leq\Pr\left[R_{0}\right]\leq\varepsilon
+\]
+
+\end_inset
+
+ כלומר 
+\begin_inset Formula 
+\[
+\Pr\left[e_{P}\left(\A\left(S_{n}\right)\right)\leq\varepsilon\right]=1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נגדיר נקודה 
+\begin_inset Formula $C\leq R$
+\end_inset
+
+ כך ש 
+\begin_inset Formula 
+\begin{equation}
+\Pr\left[R_{0}\backslash C\right]=\varepsilon\label{eq:1}
+\end{equation}
+
+\end_inset
+
+ אם קיימת נקודה 
+\begin_inset Formula $\x$
+\end_inset
+
+ בדגימה, המתוייגת כ 
+\begin_inset Formula $'1'$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\norm\geq C$
+\end_inset
+
+, אז מעצם הגדרת 
+\begin_inset Formula $\A_{ball}$
+\end_inset
+
+ מתקיים כי 
+\begin_inset Formula 
+\[
+R_{0}\backslash R\subseteq R_{0}\backslash C
+\]
+
+\end_inset
+
+ ולכן 
+\begin_inset Formula 
+\[
+\Pr\left[R_{0}\backslash R\right]\leq\Pr\left[R_{0}\backslash C\right]=\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $\left(\#\right)$
+\end_inset
+
+נזכור כי עבור דגימה 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ אף נקודה לא נפלה ב 
+\begin_inset Formula $R_{0}\backslash R=\left\{ \x\mid R<\norm\leq R_{0}\right\} $
+\end_inset
+
+, נקודות המתוייגות כ 
+\begin_inset Formula $'0'$
+\end_inset
+
+ אינן יכולות ליפול בתחום זה כיוון שהמחלקה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+realizable
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ וכן מעצם הגדרת האלגוריתם 
+\begin_inset Formula $R=\max_{\x\in S_{1}}\norm$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אחרת כל הנקודות המתוייגות כ 
+\begin_inset Formula $'1'$
+\end_inset
+
+ בדגימה, מקיימות 
+\begin_inset Formula $\norm<C$
+\end_inset
+
+ , כלומר 
+\begin_inset Formula 
+\[
+\Pr\left[R_{0}\backslash R\right]>\varepsilon
+\]
+
+\end_inset
+
+אם כן : 
+\begin_inset Formula 
+\[
+\Pr\left[e_{P}\left(h_{R}\right)>\varepsilon\right]\overset{\left(\#\right)}{=}\Pr\left[\forall i\ \ \norm\notin\left(C,R\right]\right]\overset{\text{i.i.d}}{=}\prod_{i=1}^{n}\Pr\left[\norm\notin\left(C,R\right]\right]\overset{\ref{eq:1}}{=}\left(1-\varepsilon\right)^{n}\leq e^{-\varepsilon n}\leq\delta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נפתור עבור 
+\begin_inset Formula $n$
+\end_inset
+
+: 
+\begin_inset Formula 
+\[
+e^{-\varepsilon n}\leq\delta\iff-\varepsilon n\leq\ln\left(\delta\right)\iff n\geq\frac{1}{\varepsilon}\ln\left(\frac{1}{\delta}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נשים לב כי החסם איננו תלוי ב 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ נוכל להסביר זאת בשתי דרכים )שיכולות להיות שקולות(: 
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+מתקיים כי 
+\begin_inset Formula $VC\dim\left(\H_{ball}\right)=1$
+\end_inset
+
+ )כי בהינתן שתי נקודות, אם הן בעלות אותו נורמה, מהגדרת המחלקה הן לא ניתנות
+ לניפוץ כלומר הן יכולות לקבל את אותו
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+label
+\lang hebrew
+ בלבד.
+ אם הן בעלות נורמה שונה, אז לא נוכל להגדיר את הנקודה בעלת הנורמה הגדולה
+ כמתוייגת 
+\begin_inset Formula $'1'$
+\end_inset
+
+ ואת הנקודה השניה כ 
+\begin_inset Formula $'0'$
+\end_inset
+
+ מעצם הגדרת המחלקה.
+ באופן ברור נקודה אחת ניתנת לניפוץ( 
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+בלקיחת נורמה הורדנו את מימד הבעיה ל 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+PAC in Expectation 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נניח בשאלה כי אנו מדברים על המקרה ה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+realizable
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\lang hebrew
+הגדרה : 
+\series default
+נאמר ש מחלקת היפותזות 
+\begin_inset Formula $\H$
+\end_inset
+
+ היא 
+\begin_inset Formula $PAC\ learnable\ in\ expectation$
+\end_inset
+
+ באמצעות אלגוריתם 
+\begin_inset Formula $\A$
+\end_inset
+
+ אם קיימת פונקציה 
+\begin_inset Formula $N\left(a\right):\left(0,1\right)^{2}\rightarrow\mathbb{N}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\forall a\in\left(0,1\right)$
+\end_inset
+
+ ולכל התפלגות 
+\begin_inset Formula $P\in R\left(\H\right)$
+\end_inset
+
+, בהינתן קבוצת דגימה 
+\begin_inset Formula $S$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\left|S\right|\geq N\left(a\right)$
+\end_inset
+
+ מתקיים כי 
+\begin_inset Formula 
+\[
+\E\left[e_{P}\left(\A\left(S\right)\right)\right]\leq a
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נוכיח כי 
+\begin_inset Formula $\H$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PAC learnable
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אם ורק אם 
+\begin_inset Formula $\H$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PAC learnable in expectation
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\lang hebrew
+הוכחה : 
+\series default
+נוכיח בשני כיוונים :
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+\begin_inset Formula $\impliedby$
+\end_inset
+
+ 
+\begin_inset Formula $\H$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PAC learnable
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+יהיי 
+\begin_inset Formula $a\in\left(0,1\right)$
+\end_inset
+
+ ויהיו 
+\begin_inset Formula $\varepsilon,\delta>0$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\varepsilon+\delta=a$
+\end_inset
+
+.
+ מתקיים כי לכל 
+\begin_inset Formula $n\geq N\left(\varepsilon,\delta\right)$
+\end_inset
+
+ ולכל 
+\begin_inset Formula $P\in R\left(\H\right)$
+\end_inset
+
+ כי : 
+\begin_inset Formula 
+\[
+\Pr\left[e_{P}\left(\A\left(S_{n}\right)\right)\leq\varepsilon\right]\geq1-\delta
+\]
+
+\end_inset
+
+ובאופן שקול 
+\begin_inset Formula 
+\[
+\Pr\left[e_{P}\left(\A\left(S_{n}\right)\right)>\varepsilon\right]<\delta
+\]
+
+\end_inset
+
+נסמן ב 
+\begin_inset Formula $\H_{bad}^{\varepsilon}\left(P\right)$
+\end_inset
+
+ את קבוצת ההיפותזות המקיימות: 
+\begin_inset Formula 
+\[
+\H_{bad}^{\varepsilon}\left(P\right)=\left\{ h\in\H\mid e_{P}\left(h\right)>\varepsilon\right\} 
+\]
+
+\end_inset
+
+מהגדרת הקבוצה מתקיים כי 
+\begin_inset Formula 
+\begin{align}
+\Pr\left[e_{P}\left(\A\left(S_{n}\right)\right)>\varepsilon\right] & =\Pr\left[\A\left(S_{n}\right)\in\H_{bad}^{\varepsilon}\right]<\delta\label{eq:1-1}\\
+\Pr\left[e_{P}\left(\A\left(S_{n}\right)\right)\leq\varepsilon\right] & =\Pr\left[\A\left(S_{n}\right)\not\in\H_{bad}^{\varepsilon}\right]\geq1-\delta
+\end{align}
+
+\end_inset
+
+מנוסחאת התוחלת השלמה נקבל כי 
+\begin_inset Formula 
+\begin{align*}
+ & \E\left[e_{P}\left(\A\left(S\right)\right)\right]=\E\left[\E\left[e_{p}\left(h\right)\mid\A\left(S\right)=h\right]\right]=\\
+ & \underset{\leq1}{\underbrace{\E\left[e_{p}\left(h\right)\mid\A\left(S\right)\in\H_{bad}^{\varepsilon}\right]}}\underset{\text{From }\ref{eq:1-1}\text{}<\delta}{\underbrace{\Pr\left[\A\left(s\right)\in\H_{bad}^{\varepsilon}\right]}}+\underset{\text{From }\ref{eq:1-1}\text{}\leq\varepsilon}{\underbrace{\E\left[e_{p}\left(h\right)\mid\A\left(S\right)\not\in\H_{bad}^{\varepsilon}\right]}}\underset{\leq1}{\underbrace{\Pr\left[\A\left(s\right)\not\in\H_{bad}^{\varepsilon}\right]}}\\
+ & \leq\delta+\varepsilon=a
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang hebrew
+\begin_inset Formula $\implies$
+\end_inset
+
+ 
+\begin_inset Formula $\H$
+\end_inset
+
+ היא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PAC learnable in expectation
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+יהיו 
+\begin_inset Formula $\varepsilon,\delta>0$
+\end_inset
+
+.
+ יהיי 
+\begin_inset Formula $a\in\left(0,1\right)$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $a=\varepsilon\cdot\delta$
+\end_inset
+
+.
+ לכל 
+\begin_inset Formula $n\geq N\left(a\right)$
+\end_inset
+
+ )פונקציה של 
+\begin_inset Formula $\varepsilon,\delta$
+\end_inset
+
+( ולכל התפלגות 
+\begin_inset Formula $P\in R\left(\H\right)$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula 
+\[
+\Pr\left[e_{P}\left(\A\left(S\right)\right)>\varepsilon\right]\overset{\text{Chebyshev}}{\leq}\frac{\E\left[e_{P}\left(\A\left(S\right)\right)\right]}{\varepsilon}\leq\frac{a}{\varepsilon}=\frac{\varepsilon\cdot\delta}{\varepsilon}=\delta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Calculus and Probability
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+יהיו 
+\begin_inset Formula $X_{1},\ldots,X_{n}$
+\end_inset
+
+ משתנים מקרים בלתי תלויים רציפים מהתפלגות 
+\begin_inset Formula $U\left(\left[0,1\right]\right)$
+\end_inset
+
+.
+ נגדיר 
+\begin_inset Formula 
+\[
+Y=\max\left(X_{1},\ldots,X_{n}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Problem 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נמצא את ה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PDF
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+של 
+\begin_inset Formula $Y$
+\end_inset
+
+, 
+\begin_inset Formula $\E\left[Y\right]$
+\end_inset
+
+ וכן 
+\begin_inset Formula $\Var\left(Y\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+נמצא את
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+PDF
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+כידוע עבור 
+\begin_inset Formula $X\sim U\left(\left[0,1\right]\right)$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula 
+\[
+F_{X}\left(x\right)=\begin{cases}
+x & 0\leq x\leq1\\
+1 & x>1\\
+0 & x<0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+לפיכך 
+\begin_inset Formula 
+\[
+\Pr\left(Y\leq y\right)=\Pr\left(\max\left(X_{1},\ldots,X_{n}\right)\leq y\right)=\Pr\left(X_{1}\leq y,\ldots,X_{n}\leq y\right)\overset{\text{i.d.d}}{=}\prod_{i=1}^{n}\Pr\left(X_{i}\leq y\right)=\left(F_{X}\left(x\right)\right)^{n}
+\]
+
+\end_inset
+
+אם כן 
+\begin_inset Formula 
+\[
+F_{X}^{n}\left(x\right)=\begin{cases}
+x^{n} & 0\leq x\leq1\\
+1 & x>1\\
+0 & x<0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אנו יודעים כי 
+\begin_inset Formula 
+\[
+f_{X}\left(x\right)=\frac{\partial}{\partial x}F_{X}\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+ולכן 
+\begin_inset Formula 
+\[
+\boxed{f_{Y}\left(y\right)=\begin{cases}
+ny^{n-1} & 0\leq y\leq1\\
+0 & y>1\\
+0 & y<0
+\end{cases}}
+\]
+
+\end_inset
+
+
+\lang english
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename C:/Users/bours/Pictures/Screenshot 2023-03-21 175157.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Plot PDF
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang hebrew
+נמצא 
+\begin_inset Formula $\E\left[Y\right]$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\E\left[Y\right]=\int\limits _{-\infty}^{\infty}y\cdot f_{Y}\left(y\right)\mathrm{d}y=\int\limits _{-\infty}^{0}y\cdot f_{Y}\left(y\right)\mathrm{d}y+\int\limits _{0}^{1}y\cdot f_{Y}\left(y\right)\mathrm{d}y+\int\limits _{1}^{\infty}y\cdot f_{Y}\left(y\right)\mathrm{d}y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+מתקיים כי 
+\begin_inset Formula 
+\[
+\int\limits _{-\infty}^{0}y\cdot0\mathrm{d}y=\int\limits _{1}^{\infty}y\cdot0=0
+\]
+
+\end_inset
+
+ ולכן 
+\begin_inset Formula 
+\[
+\E\left[Y\right]=\int\limits _{0}^{1}y\cdot f_{Y}\left(y\right)\mathrm{d}y=\int\limits _{0}^{1}y\cdot ny^{n-1}\mathrm{d}y=\int\limits _{0}^{1}ny^{n}\mathrm{d}y=\frac{n\cdot y^{n+1}}{n+1}\biggr\rvert_{0}^{1}=\frac{n}{n+1}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\boxed{\E\left[Y\right]=\frac{n}{n+1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang hebrew
+נמצא 
+\begin_inset Formula $\Var\left(Y\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+כידוע מתקיים כי 
+\begin_inset Formula 
+\[
+\Var\left(Y\right)=\E\left[Y^{2}\right]-\E^{2}\left[Y\right]
+\]
+
+\end_inset
+
+אם כך נמצא 
+\begin_inset Formula $\E\left[Y^{2}\right]$
+\end_inset
+
+ כאשר ההסברים עבור המעברים דומים מאוד לעיל ולכן נקצר
+\begin_inset Formula 
+\[
+\E\left[Y^{2}\right]=\int\limits _{0}^{1}y^{2}\cdot f_{Y}\left(y\right)\mathrm{d}y=\int\limits _{0}^{1}y^{2}\cdot ny^{n-1}\mathrm{d}y=\int\limits _{0}^{1}ny^{n+1}\mathrm{d}y=\frac{n\cdot y^{n+2}}{n+2}\biggr\rvert_{0}^{1}=\frac{n}{n+2}
+\]
+
+\end_inset
+
+מתקיים אם כך 
+\begin_inset Formula 
+\[
+\Var\left(Y\right)=\E\left[Y^{2}\right]-\E^{2}\left[Y\right]=\frac{n}{n+2}-\left(\frac{n}{n+1}\right)^{2}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\boxed{\Var\left(Y\right)=\frac{n}{n+2}-\left(\frac{n}{n+1}\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang hebrew
+אסימפטוטיקה 
+\begin_inset Formula 
+\[
+\E\left[Y\right]=\E\left[\max\left(X_{1},\ldots,X_{n}\right)\right]=\frac{n}{n+1}\underset{n\rightarrow\infty}{\longrightarrow}1
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Var\left(Y\right)=\frac{n}{n+2}-\left(\frac{n}{n+1}\right)^{2}\underset{n\rightarrow\infty}{\longrightarrow}1-1=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\square$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Optimal Classifiers and Decision Rules
+\end_layout
+
+\begin_layout Subsection
+Poblem
+\end_layout
+
+\begin_layout Subsubsection
+section
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+יהיו 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ משתנים מקריים כך ש 
+\begin_inset Formula $Y$
+\end_inset
+
+ מקבל ערכים ב 
+\begin_inset Formula $\mathcal{Y}=\left\{ 1,\ldots,L\right\} $
+\end_inset
+
+.
+ נגדיר 
+\begin_inset Formula $\ell_{0-1}$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+0-1 loos function
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שהוגדרה בכיתה.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נראה כי 
+\begin_inset Formula 
+\[
+h=\arg\min_{f:\X\rightarrow\Y}\E\left[\ell_{0-1}\left(Y,f\left(X\right)\right)\right]
+\]
+
+\end_inset
+
+נתונה ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula 
+\[
+h\left(x\right)=\arg\max_{i\in\Y}\Pr\left[Y=i\mid X=x\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+לפי ההגדרה 
+\begin_inset Formula 
+\[
+\E\left[\ell_{0-1}\left(Y,f\left(X\right)\right)\right]=\sum_{x\in\X,y\in\Y}\Pr\left[X=x,Y=y\right]\ell_{0-1}\left(y,f\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כאשר אנו משתמשים בהצגה זו רק לצורך הצגה נוחה וכן יכול להיות כי הקבוצה 
+\begin_inset Formula $\X$
+\end_inset
+
+ אינה בת מנייה.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נקבע 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ לפיכך אנו נדרשים למצוא 
+\begin_inset Formula $f$
+\end_inset
+
+ המביאה למינימום את הביטוי הבא : 
+\begin_inset Formula 
+\[
+\sum_{y\in\Y}\Pr\left[X=x,Y=y\right]\ell_{0-1}\left(y,f\left(x\right)\right)=\sum_{y\in\Y}\Pr\left[Y=y\mid X=x\right]\Pr\left[X=x\right]\cdot\ell_{0-1}\left(y,f\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כעת נשים לב כי 
+\begin_inset Formula $\Pr\left[X=x\right]$
+\end_inset
+
+ קבוע אי שלילי ולכן אנו נדרשים למעשה למנמם את הסכום הבא : 
+\begin_inset Formula 
+\[
+\sum_{y\in\Y}\Pr\left[Y=y\mid X=x\right]\ell_{0-1}\left(y,f\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+מתקיים כי 
+\begin_inset Formula $\Pr\left[Y=y\mid X=x\right]\geq0$
+\end_inset
+
+ ולכן אנו נרצה להתעלם מהערך 
+\begin_inset Formula $y$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\Pr\left[Y=i\mid X=x\right]$
+\end_inset
+
+ גדול ביותר עבורו )כאשר השתמשנו בהגדרת/ מסקנה מהגדרת 
+\begin_inset Formula $\ell_{0-1}$
+\end_inset
+
+ (.
+ אם כן: 
+\begin_inset Formula 
+\[
+\boxed{h\left(x\right)=\arg\max_{i\in\Y}\Pr\left[Y=i\mid X=x\right]}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+section 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+יהיו 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ משתנים מקריים כך ש 
+\begin_inset Formula $Y$
+\end_inset
+
+ מקבל ערכים ב 
+\begin_inset Formula $\mathcal{Y}=\left\{ 0,1\right\} $
+\end_inset
+
+.
+ נגדיר 
+\begin_inset Formula $\Delta$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+פונקציית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+loss
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אסימטרית: 
+\begin_inset Formula 
+\[
+\Delta\left(y,\hat{y}\right)=\begin{cases}
+0 & y=\hat{y}\\
+a & y=0,\hat{y}=1\\
+b & y=1,\hat{y}=0
+\end{cases}
+\]
+
+\end_inset
+
+כאשר 
+\begin_inset Formula $a,b\in\left(0,1\right]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נמצא 
+\begin_inset Formula 
+\[
+h=\arg\min_{f:\X\rightarrow\Y}\E\left[\Delta\left(Y,f\left(X\right)\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+לפי ההגדרה 
+\begin_inset Formula 
+\[
+\E\left[\Delta\left(Y,f\left(X\right)\right)\right]=\sum_{x\in\X,y\in\Y}\Pr\left[X=x,Y=y\right]\Delta\left(y,f\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כאשר אנו משתמשים בהצגה זו רק לצורך הצגה נוחה וכן יכול להיות כי הקבוצה 
+\begin_inset Formula $\X$
+\end_inset
+
+ אינה בת מנייה.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נקבע 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ לפיכך אנו נדרשים למצוא 
+\begin_inset Formula $f$
+\end_inset
+
+ המביאה למינימום את הביטוי הבא : 
+\begin_inset Formula 
+\[
+\sum_{y\in\Y}\Pr\left[X=x,Y=y\right]\Delta\left(y,f\left(x\right)\right)=\sum_{y\in\Y}\Pr\left[Y=y\mid X=x\right]\Pr\left[X=x\right]\cdot\Delta\left(y,f\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כעת נשים לב כי 
+\begin_inset Formula $\Pr\left[X=x\right]$
+\end_inset
+
+ קבוע אי שלילי ולכן אנו נדרשים למעשה למנמם את הסכום הבא : 
+\begin_inset Formula 
+\[
+\Pr\left[Y=0\mid X=x\right]\Delta\left(0,f\left(x\right)\right)+\Pr\left[Y=1\mid X=x\right]\Delta\left(1,f\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+האפשרויות שלנו נתונות ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula 
+\begin{align*}
+ & \Pr\left[Y=0\mid X=x\right]\Delta\left(0,1\right)+\Pr\left[Y=1\mid X=x\right]\Delta\left(1,1\right) & \left(1\right)\\
+ & \Pr\left[Y=0\mid X=x\right]\Delta\left(0,0\right)+\Pr\left[Y=1\mid X=x\right]\Delta\left(1,0\right) & \left(2\right)
+\end{align*}
+
+\end_inset
+
+כלומר 
+\begin_inset Formula 
+\begin{align*}
+ & \Pr\left[Y=0\mid X=x\right]\cdot a & \left(1\right)\\
+ & \Pr\left[Y=1\mid X=x\right]\cdot b & \left(2\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אם כן כדי למנמם נגדיר : 
+\begin_inset Formula 
+\[
+\boxed{h\left(x\right)=\begin{cases}
+0 & \Pr\left[Y=0\mid X=x\right]\cdot a>\Pr\left[Y=1\mid X=x\right]\cdot b\\
+1 & otherwise
+\end{cases}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Problem 2
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+יהיו 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ משתנים מקריים כך ש 
+\begin_inset Formula $Y$
+\end_inset
+
+ מקבל ערכים ב 
+\begin_inset Formula $\mathcal{Y}=\left\{ 0,1\right\} $
+\end_inset
+
+ ו 
+\begin_inset Formula $X$
+\end_inset
+
+ מקבל ערכים ב 
+\begin_inset Formula $\X$
+\end_inset
+
+.
+ נניח כי אנו מעוניינים למצוא פונקציית חיזוי 
+\begin_inset Formula $h:\X\rightarrow\left[0,1\right]$
+\end_inset
+
+.
+ נגדיר 
+\begin_inset Formula $\Delta_{log}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\Delta_{log}\left(y,\hat{y}\right)=-y\log\left(\hat{y}\right)-\left(1-y\right)\log\left(1-\hat{y}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נמצא 
+\begin_inset Formula 
+\[
+h=\arg\min_{f:\X\rightarrow\left[0,1\right]}\E\left[\Delta_{log}\left(Y,f\left(X\right)\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+לפי ההגדרה 
+\begin_inset Formula 
+\[
+\E\left[\Delta\left(Y,f\left(X\right)\right)\right]=\sum_{x\in\X,y\in\Y}\Pr\left[X=x,Y=y\right]\Delta_{log}\left(y,f\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כאשר אנו משתמשים בהצגה זו רק לצורך הצגה נוחה וכן יכול להיות כי הקבוצה 
+\begin_inset Formula $\X$
+\end_inset
+
+ אינה בת מנייה.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נקבע 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ לפיכך אנו נדרשים למצוא 
+\begin_inset Formula $f$
+\end_inset
+
+ המביאה למינימום את הביטוי הבא : 
+\begin_inset Formula 
+\[
+\sum_{y\in\Y}\Pr\left[X=x,Y=y\right]\Delta_{log}\left(y,f\left(x\right)\right)=\sum_{y\in\Y}\Pr\left[Y=y\mid X=x\right]\Pr\left[X=x\right]\cdot\Delta_{log}\left(y,f\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כעת נשים לב כי 
+\begin_inset Formula $\Pr\left[X=x\right]$
+\end_inset
+
+ קבוע אי שלילי ולכן אנו נדרשים למעשה למנמם את הסכום הבא : 
+\begin_inset Formula 
+\[
+\Pr\left[Y=0\mid X=x\right]\Delta_{log}\left(0,f\left(x\right)\right)+\Pr\left[Y=1\mid X=x\right]\Delta_{log}\left(1,f\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נסמן לשם הנוחות
+\begin_inset Formula 
+\begin{align*}
+ & \Pr\left[Y=0\mid X=x\right]=p_{0} & \left(1\right)\\
+ & \Pr\left[Y=1\mid X=x\right]=p_{1} & \left(2\right)
+\end{align*}
+
+\end_inset
+
+כעת נכתוב מחדש את הסכום עם כתיבה מפורשת של 
+\begin_inset Formula $\Delta_{log}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula 
+\[
+-p_{o}\cdot\log\left(1-f\left(x\right)\right)+p_{1}-p_{1}\cdot\log\left(f\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+ברור כי 
+\begin_inset Formula $0<f\left(x\right)<1$
+\end_inset
+
+ אחרת הביטוי אינו מוגדר.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כעת נגזור לפי 
+\begin_inset Formula $f\left(x\right)$
+\end_inset
+
+ ונשווה ל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+0
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+כדי למצוא מינימום, ונקבל 
+\begin_inset Formula 
+\[
+\frac{p_{0}}{1-f\left(x\right)}-\frac{p_{1}}{f\left(x\right)}=0\implies f\left(x\right)=p_{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כאשר השתמשנו בעובדה כי 
+\begin_inset Formula $p_{0}+p_{1}=1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נוודא כי אכן מינימום ע
+\begin_inset Quotes erd
+\end_inset
+
+י גזירה נוספת : 
+\begin_inset Formula 
+\[
+\left(\frac{p_{0}}{1-f\left(x\right)}-\frac{p_{1}}{f\left(x\right)}\right)^{'}=\frac{p_{0}}{\left(1-f\left(x\right)\right)^{2}}+\frac{p_{1}}{\left(f\left(x\right)\right)^{2}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כעת נציב 
+\begin_inset Formula $f\left(x\right)=p_{1}$
+\end_inset
+
+ ואנו מניחים כי 
+\begin_inset Formula $p_{1}\neq0,1$
+\end_inset
+
+ ונקבל כי 
+\begin_inset Formula 
+\[
+\frac{p_{0}}{\left(1-p_{1}\right)^{2}}+\frac{p_{1}}{\left(p_{1}\right)^{2}}>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+ולכן התקבל מינימום.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אם כך נגדיר 
+\begin_inset Formula 
+\[
+\boxed{h\left(x\right)=\Pr\left[Y=1\mid X=x\right]=p_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Problem
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+יהיו 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ משתנים מקריים כך ש 
+\begin_inset Formula $Y$
+\end_inset
+
+ מקבל ערכים ב 
+\begin_inset Formula $\mathcal{Y}=\left\{ 0,1\right\} $
+\end_inset
+
+ וכן 
+\begin_inset Formula $\X=\mathbb{R}$
+\end_inset
+
+ בהתאמה .
+ נניח כי מתקיים 
+\begin_inset Formula $X_{\mid Y=0}\sim\mathcal{N}\left(\mu,\sigma_{0}^{2}\right)$
+\end_inset
+
+ וכן 
+\begin_inset Formula $X_{\mid Y=1}\sim\mathcal{N}\left(\mu,\sigma_{1}^{2}\right)$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $\sigma_{0}\neq\sigma_{1}$
+\end_inset
+
+.
+ נניח כי 
+\begin_inset Formula $\Pr\left[Y=1\right]=p_{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נמצא את מסווג אופטימלי 
+\begin_inset Formula $h:\mathbb{R}\rightarrow\left\{ 0,1\right\} $
+\end_inset
+
+ שמביא למינימום את 
+\begin_inset Formula $\E\left[\ell_{0-1}\left(Y,h\left(X\right)\right)\right]$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+לפי ההגדרה אם כן: 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula 
+\[
+\E\left[\ell_{0-1}\left(Y,h\left(X\right)\right)\right]=\sum_{x\in\X,y\in\Y}\Pr\left[X=x,Y=y\right]\ell_{0-1}\left(y,h\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נקבע 
+\begin_inset Formula $x$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula 
+\begin{align*}
+ & \sum_{y\in\Y}\Pr\left[X=x,Y=y\right]\ell_{0-1}\left(y,h\left(x\right)\right)=\\
+= & f_{X_{\mid Y=0}}\left(x\right)\Pr\left[Y=0\right]\ell_{0-1}\left(0,h\left(x\right)\right)+f_{X_{\mid Y=1}}\left(x\right)\Pr\left[Y=1\right]\ell_{0-1}\left(1,h\left(x\right)\right)\\
+= & f_{X_{\mid Y=0}}\left(x\right)\cdot\left(1-p_{1}\right)\cdot\ell_{0-1}\left(0,h\left(x\right)\right)+f_{X_{\mid Y=1}}\left(x\right)\cdot p_{1}\cdot\ell_{0-1}\left(1,h\left(x\right)\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כעת התנאי 
+\begin_inset Formula 
+\[
+h\left(x\right)=\begin{cases}
+0 & \frac{f_{X_{\mid Y=0}}\left(x\right)}{f_{X_{\mid Y=1}}\left(x\right)}>\frac{p_{1}}{\left(1-p_{1}\right)}\\
+1 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נפרש את הביטוי : נשים לב מהיות 
+\begin_inset Formula $f_{X_{\mid Y=y}}$
+\end_inset
+
+ פונקצית צפיפות של משתנה גאוסייני היא חיובית )ולכן נוכל לחלק בה( וההסתברות
+ 
+\begin_inset Formula $p_{1}\in\left(0,1\right)$
+\end_inset
+
+, אחרת לא יכול להיות כי 
+\begin_inset Formula $X_{\mid Y=y}$
+\end_inset
+
+ משתנה גאוסייני.
+ 
+\begin_inset Formula 
+\begin{align*}
+f_{X_{\mid Y=0}}\left(x\right)\cdot\left(1-p_{1}\right)>f_{X_{\mid Y=1}}\left(x\right)\cdot p_{1} & \text{\ensuremath{\iff}}\frac{f_{X_{\mid Y=0}}\left(x\right)}{f_{X_{\mid Y=1}}\left(x\right)}>\frac{p_{1}}{\left(1-p_{1}\right)}\\
+ & \text{\ensuremath{\iff}}\frac{\frac{1}{\sigma_{0}\sqrt{2\pi}}\exp\left(-\frac{\left(x-\mu\right)^{2}}{2\sigma_{0}^{2}}\right)}{\frac{1}{\sigma_{1}\sqrt{2\pi}}\exp\left(-\frac{\left(x-\mu\right)^{2}}{2\sigma_{1}^{2}}\right)}>\frac{p_{1}}{\left(1-p_{1}\right)}\\
+ & \text{\ensuremath{\iff}}\frac{\sigma_{1}}{\sigma_{0}}\exp\left(\frac{\left(x-\mu\right)^{2}}{2\sigma_{1}^{2}}-\frac{\left(x-\mu\right)^{2}}{2\sigma_{0}^{2}}\right)>\frac{p_{1}}{\left(1-p_{1}\right)}\\
+ & \iff\left(\frac{\left(x-\mu\right)^{2}}{2\sigma_{1}^{2}}-\frac{\left(x-\mu\right)^{2}}{2\sigma_{0}^{2}}\right)>\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
+ & \iff\left(\frac{x^{2}-2x\mu+\mu^{2}}{2\sigma_{1}^{2}}-\frac{x^{2}-2x\mu+\mu^{2}}{2\sigma_{0}^{2}}\right)>\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
+ & \iff\left(\frac{x^{2}-2x\mu+\mu^{2}}{2\sigma_{1}^{2}}-\frac{x^{2}-2x\mu+\mu^{2}}{2\sigma_{0}^{2}}\right)>\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
+ & \iff\left(\frac{\sigma_{0}^{2}x^{2}-\sigma_{0}^{2}2x\mu+\sigma_{0}^{2}\mu^{2}-\sigma_{1}^{2}x^{2}+\sigma_{1}^{2}2x-\sigma_{1}^{2}\mu^{2}}{\sigma_{1}^{2}\sigma_{0}^{2}}\right)>2\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
+ & \iff\left(\frac{x^{2}\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)+2x\mu\left(\sigma_{1}^{2}-\sigma_{0}^{2}\right)+\mu^{2}\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)}{\sigma_{1}^{2}\sigma_{0}^{2}}\right)>2\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
+ & \iff x^{2}\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)+2x\mu\left(\sigma_{1}^{2}-\sigma_{0}^{2}\right)+\mu^{2}\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)>\sigma_{1}^{2}\sigma_{0}^{2}2\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)
+\end{align*}
+
+\end_inset
+
+נסמן 
+\begin_inset Formula $\sigma_{1}^{2}\sigma_{0}^{2}2\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)=C$
+\end_inset
+
+ וכן 
+\begin_inset Formula $\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)=A$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נפריד כעת לשני מקרים )כיוון ש 
+\begin_inset Formula $A\neq0$
+\end_inset
+
+ לפי הנתון( : 
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+\begin_inset Formula $A>0$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula 
+\begin{align*}
+ & \iff x^{2}A-A2x\mu+\mu^{2}A>C\\
+ & \iff x^{2}-2\mu x+\mu^{2}>\frac{C}{A}\\
+ & \iff\left(x-\mu\right)^{2}>\frac{C}{A}
+\end{align*}
+
+\end_inset
+
+אם 
+\begin_inset Formula $C<0$
+\end_inset
+
+ : מתקיים לכל 
+\begin_inset Formula $x$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אם 
+\begin_inset Formula $C\geq0$
+\end_inset
+
+ : 
+\begin_inset Formula 
+\[
+\iff\left(x-\mu\right)^{2}>\frac{C}{A}\iff\left|x-\mu\right|>\sqrt{\frac{C}{A}}\iff x>\mu+\sqrt{\frac{C}{A}}\text{\ or}\ x<-\mu+\sqrt{\frac{C}{A}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang hebrew
+\begin_inset Formula $A<0$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula 
+\begin{align*}
+ & \iff x^{2}A-A2x\mu+\mu^{2}A>C\\
+ & \iff x^{2}-2\mu x+\mu^{2}<\frac{C}{A}\\
+ & \iff\left(x-\mu\right)^{2}<\frac{C}{A}
+\end{align*}
+
+\end_inset
+
+אם 
+\begin_inset Formula $C\leq0$
+\end_inset
+
+ : : 
+\begin_inset Formula 
+\[
+\iff\left(x-\mu\right)^{2}<\frac{C}{A}\iff\left|x-\mu\right|<\sqrt{\frac{C}{A}}\iff-\mu+\sqrt{\frac{C}{A}}<x<\mu+\sqrt{\frac{C}{A}}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אם 
+\begin_inset Formula $C>0$
+\end_inset
+
+ : אין 
+\begin_inset Formula $x$
+\end_inset
+
+ המקיים את הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל .
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\lang hebrew
+נסכם 
+\begin_inset Formula 
+\begin{align*}
+h\left(x\right) & =\begin{cases}
+0 & A>0,C<0\\
+0 & A>0,C\geq0,\left(x>\mu+\sqrt{\frac{C}{A}}\right)\bigvee\left(x<-\mu+\sqrt{\frac{C}{A}}\right)\\
+0 & A<0,C\leq0,-\mu+\sqrt{\frac{C}{A}}<x<\mu+\sqrt{\frac{C}{A}}\\
+1 & \text{otherwise}
+\end{cases}\\
+ & C=\sigma_{1}^{2}\sigma_{0}^{2}2\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
+ & A=\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Programing Assignment
+\end_layout
+
+\begin_layout Subsection*
+1.
+ Visualizing the Hoeffding bound
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../Figure_1.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Visualizing the Hoeffding bound
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.
+ Nearest Neighbor
+\end_layout
+
+\begin_layout Subsubsection*
+2.1 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Submitted to the programing section of the assignment.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+2.2 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אחוז הדיוק שהתקבל : 
+\begin_inset Formula $84.6\%$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+ממסווג רנדומי לחלוטין היה מצופה שאחוז הדיוק יהיה )בתוחלת(
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $10\%$
+\end_inset
+
+ שכן יש עשרה מספרים שיכולים להתקבל בהסתברות שווה.
+\end_layout
+
+\begin_layout Subsubsection*
+2.3
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../Figure_2.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Prediction accuracy as a function of 
+\begin_inset Formula $k$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\lang hebrew
+ניתן לראות כי ככל ש 
+\begin_inset Formula $k$
+\end_inset
+
+ גדל כך אחוז הדיוק קטן.
+ ניתן להסביר זאת מפירוש ריצת האלגוריתם באופן הבא : ככל ש 
+\begin_inset Formula $k$
+\end_inset
+
+ גדל, 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $pool$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ התמונות שעומד לרשות המסווג גדול יותר לכן נצפה לראות יותר שגיאות.
+ למשל ניתן הסבר שיכול לשכנע: תמונות של הספרה 
+\begin_inset Formula $1$
+\end_inset
+
+ ושל הספרה 
+\begin_inset Formula $7$
+\end_inset
+
+ יכולות להיות דומות, בהינתן תמונה של הספרה 
+\begin_inset Formula $7$
+\end_inset
+
+ שהאלגוריתם מקבל, הוא יחשב מרחקים מהתמונות הקרובות ביותר לפי המרחק האוקלידי.
+ אם כן יש סיכוי לא מבוטל כי תמונות שמתוייגות כ 
+\begin_inset Formula $1$
+\end_inset
+
+, קרובות לתמונה שהאלגוריתם קיבל ולכן נמצאות ב 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $pool$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ התמונות שעומד לרשות המסווג.
+ אם התמונות התוייגות כ 
+\begin_inset Formula $1$
+\end_inset
+
+ ב 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $pool$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ הן השכיחות ביותר, האלגוריתם ישגה ויתייג את התמונה כתמונה של הספרה 
+\begin_inset Formula $1$
+\end_inset
+
+.
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+
+\lang hebrew
+כבאופן מובהק ניתן לראות כי עבור 
+\begin_inset Formula $k=1$
+\end_inset
+
+ מתקבל הדיוק הטוב ביותר.
+\end_layout
+
+\begin_layout Subsubsection*
+2.4
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../Figure_3.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Prediction accuracy as a function of 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\lang hebrew
+ניתן לראות כי ככל ש 
+\begin_inset Formula $n$
+\end_inset
+
+ גדל כך אחוז הדיוק עולה.
+ ניתן להסביר שעבור 
+\begin_inset Formula $n$
+\end_inset
+
+ קטן, תמונה בעלת 
+\begin_inset Formula $Label=L_{1}$
+\end_inset
+
+ הניתנת לאלגוריתם, תהיה קרובה לתמונה מתוייגת בעלת 
+\begin_inset Formula $Label=L_{2}$
+\end_inset
+
+ כאשר 
+\begin_inset Formula $L_{1}\neq L_{2}$
+\end_inset
+
+ בסיכוי גבוה יותר )כיוון שמספר התמונות להשוות את המרחק קטן יחסית, והאלגוריתם
+ קובע עבור התמונה היחידה, עד כדי מרחקים שווים, הקרובה ביותר אליו( .
+ ככל שיש יותר מידע כך סביר יותר שתמונה בעלת 
+\begin_inset Formula $Label=L_{1}$
+\end_inset
+
+ הניתנת לאלגוריתם, תהיה קרובה ביותר לתמונה מתוייגת בעלת אותו 
+\begin_inset Formula $L_{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+ניתן לראות שהחל מ 
+\begin_inset Formula $n=2000$
+\end_inset
+
+ לערך, תוספת 
+\begin_inset Formula $x$
+\end_inset
+
+ תמונות מתוייגות אינה באופן מובהק כמו תוספת ל 
+\begin_inset Formula $100<n<1000$
+\end_inset
+
+ ובאופן כללי ניתן לראות שהגרף מתנהג דומה לגרף 
+\begin_inset Formula $\log$
+\end_inset
+
+ .
+ אפשר להסביר זאת שעבור מספיק תמונות מתוייגות )וכיוון שמספר התיוגים 
+\begin_inset Formula $\left\{ 0,1,\ldots,9\right\} $
+\end_inset
+
+ קטן יחסית והתמונות אינן מורכבות, יחסית( האלגוריתם יצליח לקבוע ברמת מובהקות
+ טובה את התיוג המתאים.
+ 
+\end_layout
+
+\end_body
+\end_document

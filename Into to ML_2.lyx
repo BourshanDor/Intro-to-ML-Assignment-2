@@ -1769,6 +1769,69 @@ Union Of Intervals
 \begin_layout Standard
 
 \lang hebrew
+נגדיר את מרחב ההתפלגות המשותפת באופן הבא: 
+\begin_inset Formula $\X=\left[0,1\right]$
+\end_inset
+
+ ו 
+\begin_inset Formula $\Y=\left\{ 0,1\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נגדיר קבוצת אינטרוולים: 
+\begin_inset Formula $I=\left\{ \left[l_{1},u_{1}\right],\ldots,\left[l_{k},u_{k}\right]\right\} $
+\end_inset
+
+ : איחוד של 
+\begin_inset Formula $k$
+\end_inset
+
+ אינטרוולים כך שמתקיים :
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $0\leq l_{1}\leq u_{1}\leq\ldots\leq u_{k}\leq1$
+\end_inset
+
+.
+ לכל קבוצת אינטרוולים שכזו נגדיר היפותזה: 
+\begin_inset Formula 
+\[
+h_{I}\left(x\right)=\begin{cases}
+1 & \text{ if }\ x\in\bigcup_{i=1}^{k}\left[l_{i},u_{i}\right]\\
+0 & \text{\ensuremath{otherwise}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+לבסוף נגדיר את מחלקת ההיפותזות הבאה: 
+\begin_inset Formula 
+\[
+\H_{k}=\left\{ h_{I}\mid I=\left\{ \left[l_{1},u_{1}\right],\ldots,\left[l_{k},u_{k}\right]\right\} ,0\leq l_{1}\leq u_{1}\leq\ldots\leq u_{k}\leq1\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
 נראה כי 
 \begin_inset Formula $VC\dim\left(\H_{k}\right)=2k$
 \end_inset
@@ -1785,7 +1848,7 @@ Union Of Intervals
 \begin_layout Enumerate
 
 \lang hebrew
-תחילה נראה כי ניתן לנפץ קבוצה בת 
+תניתן לנפץ קבוצה בת 
 \begin_inset Formula $2k$
 \end_inset
 
@@ -1796,11 +1859,24 @@ Union Of Intervals
 \begin_layout Enumerate
 
 \lang hebrew
-נראה כי לא ניתן לנפץ קבוצה גדולה יותר.
+לא ניתן לנפץ קבוצה גדולה יותר.
  
 \end_layout
 
 \begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אם כן :
+\end_layout
+
+\begin_layout Enumerate
 
 \lang hebrew
 אם כן נראה כי יש קבוצה בת
@@ -1834,7 +1910,393 @@ Union Of Intervals
 \end_inset
 
  איברים הניתנת לניפוץ.
+ כלומר אנו נראה כי קיימת קבוצת נקודות )בגודל 
+\begin_inset Formula $2k$
+\end_inset
+
+( שניתן לתייגן ב 
+\begin_inset Formula $2^{2k}$
+\end_inset
+
+ דרכים שונות.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+יהיו 
+\begin_inset Formula $2k$
+\end_inset
+
+ נקודות בקטע 
+\begin_inset Formula $\left[0,1\right]$
+\end_inset
+
+ המקיימות 
+\begin_inset Formula 
+\[
+0<x_{1}<x_{2}<\ldots<x_{2k}<1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+תהיי 
+\begin_inset Formula $\L_{1}$
+\end_inset
+
+ קבוצת הנקודות אותן אנו מענוניינים לתייג כ 
+\begin_inset Formula $'1'$
+\end_inset
+
+.
+ ובאופן זהה את 
+\begin_inset Formula $\L_{0}$
+\end_inset
+
+ את קבוצת הנקודות שאנו מעוניינים לתייג כ 
+\begin_inset Formula $'0'$
+\end_inset
+
  
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+אם 
+\begin_inset Formula $q=\left|\L_{1}\right|\leq k$
+\end_inset
+
+ :
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+מצפיפות הממשיים ניתן לעטוף כל נקודה 
+\begin_inset Formula $x_{i_{j}}\in\L_{1}$
+\end_inset
+
+ בקטע 
+\begin_inset Formula $\left[l_{i_{j}},u_{i_{j}}\right]$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $1\leq r\leq2k$
+\end_inset
+
+ , כך ש 
+\begin_inset Formula $x_{r}\neq x_{i_{j}}$
+\end_inset
+
+ מתקיים כי: 
+\begin_inset Formula $x_{r}\notin\left[l_{i_{j}},u_{i_{j}}\right]$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+עבור 
+\begin_inset Formula $k-q$
+\end_inset
+
+ שנותר לקבוע את זהותם, מצפיפות הרציונלים קיים קטע 
+\begin_inset Formula $\left[l_{*},u_{*}\right]$
+\end_inset
+
+כך שלכל 
+\begin_inset Formula $1\leq i\leq2k$
+\end_inset
+
+ , כך ש מתקיים כי: 
+\begin_inset Formula $x_{i}\notin\left[l_{*},u_{*}\right]$
+\end_inset
+
+.
+ נגדיר את כל הקטעים הנותרים כקטע זה.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אם כך לכל 
+\begin_inset Formula $x_{j}\notin\L_{1}$
+\end_inset
+
+ מתקיים כי תיוגו הוא 
+\begin_inset Formula $'0'$
+\end_inset
+
+ וכן לכל 
+\begin_inset Formula $x_{i}\in\L_{1}$
+\end_inset
+
+ מתקיים כי תיוגו 
+\begin_inset Formula $'1'$
+\end_inset
+
+, כנדרש.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang hebrew
+אם 
+\begin_inset Formula $q=\left|\L_{1}\right|>k$
+\end_inset
+
+ :
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+נתייחס לנקודות סמוכות, קרי 
+\begin_inset Formula $x_{i_{j}},x_{i_{j}+1},\ldots,x_{i_{j}+r}\in\L_{1}$
+\end_inset
+
+ כנקודה יחידה 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+, ועבור 
+\begin_inset Formula $x_{j}\in\L_{1}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $x_{j-1},x_{j+1}\notin\L_{1}$
+\end_inset
+
+ נתייחס גם כן כ 
+\begin_inset Formula $y_{j}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נסמן ב 
+\begin_inset Formula $Y$
+\end_inset
+
+ המוגדרת על ידי נקודות אלה.
+ נטען כי 
+\begin_inset Formula $\left|Y\right|\leq k$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נניח בשלילה כי 
+\begin_inset Formula $\left|Y\right|\geq k+1$
+\end_inset
+
+ כלומר אנו טוענים כי ישנן 
+\begin_inset Formula $k+1$
+\end_inset
+
+ נקודות שאינן בסמיכות, כלומר לכל 
+\begin_inset Formula $y_{i}\in Y$
+\end_inset
+
+ קיימת נקודה )אחת לפחות( כך ש 
+\begin_inset Formula $x_{j}\in\L_{0}$
+\end_inset
+
+ המפרידה בין 
+\begin_inset Formula $2$
+\end_inset
+
+ נקודות ב 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ כדי לייצר הפרדה נדרשות לפחות 
+\begin_inset Formula $k$
+\end_inset
+
+ נקודות בקבוצה 
+\begin_inset Formula $\L_{0}$
+\end_inset
+
+ אולם מתקיים כי 
+\begin_inset Formula $\left|\L_{0}\right|<k$
+\end_inset
+
+.
+ סתירה.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+לפיכך 
+\begin_inset Formula $\left|Y\right|\leq k$
+\end_inset
+
+ ואם כן חזרנו למקרה שכבר טופל, מצפיפות הממשיים נוכל לעטוף נקודות סמוכות
+ ב 
+\begin_inset Formula $\L_{1}$
+\end_inset
+
+ בקטע יחיד שלא מכיל אף נקודה אחרת מלבדן.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\lang hebrew
+עברנו על כל האפשרויות, ונוכחנו לדעת שניתן לתייג את 
+\begin_inset Formula $2k$
+\end_inset
+
+ הנקודות ב 
+\begin_inset Formula $2^{2k}$
+\end_inset
+
+ דרכים שונות.
+ אם כך הצלחנו לנתץ קבוצה המונה 
+\begin_inset Formula $2k$
+\end_inset
+
+ איברים.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang hebrew
+נראה כי לא ניתן לנתץ מדגם המכיל 
+\begin_inset Formula $r>2k$
+\end_inset
+
+ נקודות.
+ נעיר כי מהגדרת הפונקציות במחלקת ההיפותזות, עבור נקודות בדגימה המקיימות
+ 
+\begin_inset Formula $x_{i}=x_{j}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+, מתקיים כי התייוג של נקודות אלה זהה, ולכן לא ניתן לנתץ מדגם שכזה.
+ אם כן נניח כי כל הנקודות במדגם שונות.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+נראה שלא ניתן לתייג את הנקודות האי זוגיות במדגם ב 
+\begin_inset Formula $'1'$
+\end_inset
+
+ ונסיים.
+ כדי לתייג את הנקודות האי זוגיות אנו נדרשים לאינטרוול 
+\begin_inset Formula $I_{1}$
+\end_inset
+
+ שיעטוף את 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ ולא את 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ ואינטרוול 
+\begin_inset Formula $I_{2}$
+\end_inset
+
+ שיעטוף את 
+\begin_inset Formula $x_{3}$
+\end_inset
+
+ ולא את 
+\begin_inset Formula $x_{2,}x_{4}$
+\end_inset
+
+ וכו' 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+סה
+\begin_inset Quotes erd
+\end_inset
+
+כ נדרשים לפחות 
+\begin_inset Formula $k+1$
+\end_inset
+
+ אינטרוולים שונים, למשל עבור מדגם בגודל 
+\begin_inset Formula $2k+1$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+0\leq l_{1}\leq x_{1}\leq u_{1}<x_{2}<l_{2}\leq x_{3}\leq u_{2}<\ldots<l_{k+1}\leq x_{2k+1}\leq u_{k+1}\leq1
+\]
+
+\end_inset
+
+אולם מחלקת ההיפותזות מורכבת מהיפותזות של 
+\begin_inset Formula $k$
+\end_inset
+
+ אינטרוולים.
+ כלומר קבוצץ דגימה המקיימת שגודלה גדול מ 
+\begin_inset Formula $2k$
+\end_inset
+
+ אינה ניתנת לניפוץ.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כנדרש.
 \end_layout
 
 \begin_layout Standard
@@ -1856,6 +2318,268 @@ Prediction by polynomials
 \end_layout
 
 \begin_layout Standard
+
+\lang hebrew
+בהינתן פולינום 
+\begin_inset Formula $P:\mathbb{R}\rightarrow\mathbb{R}$
+\end_inset
+
+ נגדיר את ההיפותזה 
+\begin_inset Formula $h_{P}:\mathbb{R}^{2}\rightarrow\left\{ 0,1\right\} $
+\end_inset
+
+ ע
+\begin_inset Quotes erd
+\end_inset
+
+י : 
+\begin_inset Formula 
+\[
+h_{P}\left(x_{1},x_{2}\right)=\begin{cases}
+1 & P\left(x_{1}\right)\geq x_{2}\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+ נגדיר את המחלקת ההיפותזות הבאה : 
+\begin_inset Formula 
+\[
+\H_{poly}=\left\{ h_{P}\mid P\ \text{is a polynomial}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נראה כי 
+\begin_inset Formula $VC\dim\left(\H_{poly}\right)=\infty$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נשתמש בעובדה כי בהינתן 
+\begin_inset Formula $x_{1},\ldots,x_{n}\in\mathbb{R}$
+\end_inset
+
+ שונים ו 
+\begin_inset Formula $z_{1},\ldots,z_{n}\in\mathbb{R}$
+\end_inset
+
+ קיים פולינום 
+\begin_inset Formula $P$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\deg\left(P\right)=n-1$
+\end_inset
+
+ כך ש לכל 
+\begin_inset Formula $1\leq i\leq n$
+\end_inset
+
+ מתקיים כי 
+\begin_inset Formula $P\left(x_{i}\right)=z_{i}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+יהיי 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נראה כי קיימת קבוצה בת 
+\begin_inset Formula $n$
+\end_inset
+
+ איברים הניתנת לניפוץ.
+ נסמן 
+\begin_inset Formula 
+\[
+S=\left\{ \begin{pmatrix}x_{1}^{1}\\
+x_{2}^{1}
+\end{pmatrix},\ldots,\begin{pmatrix}x_{1}^{n}\\
+x_{2}^{n}
+\end{pmatrix}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כך שמתקיים לכל 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ כי 
+\begin_inset Formula $x_{1}^{j}\neq x_{1}^{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+יהיו 
+\begin_inset Formula $y_{1},\ldots,y_{n}$
+\end_inset
+
+ התיוגים שאנו מעוניינים לייחס ל 
+\begin_inset Formula $\begin{pmatrix}x_{1}^{1}\\
+x_{2}^{1}
+\end{pmatrix},\ldots,\begin{pmatrix}x_{1}^{n}\\
+x_{2}^{n}
+\end{pmatrix}$
+\end_inset
+
+ בהתאמה.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נראה שקיים פולינום 
+\begin_inset Formula $P$
+\end_inset
+
+ בדרגה 
+\begin_inset Formula $n-1$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $h_{P}$
+\end_inset
+
+ מתייג כנדרש.
+ נגדיר פונקציה 
+\begin_inset Formula $\L:\left\{ 0,1\right\} \times\mathbb{R}^{2}\rightarrow\mathbb{R}$
+\end_inset
+
+ באופן הבא : 
+\begin_inset Formula 
+\[
+\L\left(y_{i},\left(x_{1}^{i},x_{2}^{i}\right)\right)=\begin{cases}
+x_{2}^{i} & \text{ if }\ y_{i}=1\\
+x_{2}^{i}-1 & \text{ if }\ y_{i}=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+קיים פולינום 
+\begin_inset Formula $P$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\deg\left(P\right)=n-1$
+\end_inset
+
+ כך ש לכל 
+\begin_inset Formula $1\leq i\leq n$
+\end_inset
+
+ מתקיים כי 
+\begin_inset Formula $P\left(x_{1}^{i}\right)=\L\left(y_{i},\left(x_{1}^{i},x_{2}^{i}\right)\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נתבונן ב 
+\begin_inset Formula $h_{P}$
+\end_inset
+
+ : 
+\begin_inset Formula 
+\[
+h_{P}\left(x_{1}^{i},x_{2}^{i}\right)=\begin{cases}
+1 & P\left(x_{1}^{i}\right)\geq x_{2}^{i}\\
+0 & otherwise
+\end{cases}=\begin{cases}
+1 & \L\left(y_{i},\left(x_{1}^{i},x_{2}^{i}\right)\right)\geq x_{2}^{i}\\
+0 & otherwise
+\end{cases}=\begin{cases}
+1 & y_{i}=1\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כלומר 
+\begin_inset Formula $h_{P}$
+\end_inset
+
+ מתייגת כנדרש.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל נכון לכל 
+\begin_inset Formula $n$
+\end_inset
+
+ ולכן מתקיים כי 
+\begin_inset Formula 
+\[
+VC\dim\left(\H_{poly}\right)=\infty
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -1866,12 +2590,125 @@ Prediction by polynomials
 Programing Assignment
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 1.
- Visualizing the Hoeffding bound
+ Union Of Intervals
+\end_layout
+
+\begin_layout Subsection*
+(a) 
 \end_layout
 
 \begin_layout Standard
+
+\lang hebrew
+נניח כי ההתפלגות האמיתית 
+\begin_inset Formula $\Pr\left[x,y\right]=\Pr\left[y\mid x\right]\cdot\Pr\left[x\right]$
+\end_inset
+
+ נתונה ע
+\begin_inset Quotes erd
+\end_inset
+
+י : 
+\begin_inset Formula $X\sim U\left(\left[0,1\right]\right)$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\Pr\left[Y=1\mid X=x\right]=\begin{cases}
+0.8 & \text{ if }\ x\in\left[0,0.2\right]\cup\left[0.4,0.6\right]\cup\left[0.8,1\right]\\
+0.1 & \text{ if }\ x\in\left(0.2,0.4\right)\cup\left(0.6,0.8\right)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+מכך שאנו יודעים את ההתפלגות האמיתית אנו יודעים לחשב את 
+\begin_inset Formula $e_{P}\left(h\right)$
+\end_inset
+
+ קרי השגיאה תחת 
+\begin_inset Formula $h$
+\end_inset
+
+, לכל היפותזה 
+\begin_inset Formula $h\in\H_{k}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+ההיפותזה בעלת השגיאה הקטנה ביותר במחלקה 
+\begin_inset Formula $\H_{10}$
+\end_inset
+
+ קרי 
+\begin_inset Formula 
+\[
+h=\arg\min_{h\in\H_{10}}e_{P}\left(h\right)
+\]
+
+\end_inset
+
+ היא 
+\begin_inset Formula 
+\[
+h\left(x\right)=\begin{cases}
+1 & \text{ if }\ x\in\left[0,0.2\right]\cup\left[0.4,0.6\right]\cup\left[0.8,1\right]\\
+0 & \text{ if }\ x\in\left(0.2,0.4\right)\cup\left(0.6,0.8\right)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+זאת תוצאה ישירה מהתרגיל הקודם בו הוכחנו כי 
+\begin_inset Formula 
+\[
+h=\arg\min_{f:\X\rightarrow\Y}\E\left[\ell_{0-1}\left(Y,f\left(X\right)\right)\right]=e_{P}\left(h\right)
+\]
+
+\end_inset
+
+נתונה ע
+\begin_inset Quotes erd
+\end_inset
+
+י 
+\begin_inset Formula 
+\[
+h\left(x\right)=\arg\max_{i\in\Y}\Pr\left[Y=i\mid X=x\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+(b) 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
 \begin_inset Float figure
 placement H
 wide false
@@ -1879,15 +2716,11 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
-	filename ../Figure_1.png
-	scale 80
+	filename b.png
+	scale 60
 
 \end_inset
 
@@ -1898,7 +2731,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Visualizing the Hoeffding bound
+empirical and true errors, averaged across the 
+\begin_inset Formula $T$
+\end_inset
+
+, as a function of 
+\begin_inset Formula $n$
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1906,56 +2747,25 @@ Visualizing the Hoeffding bound
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-2.
- Nearest Neighbor
-\end_layout
-
-\begin_layout Subsubsection*
-2.1 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-Submitted to the programing section of the assignment.
- 
-\end_layout
-
-\begin_layout Subsubsection*
-2.2 
 \end_layout
 
 \begin_layout Standard
 
 \lang hebrew
-אחוז הדיוק שהתקבל : 
-\begin_inset Formula $84.6\%$
+ניתן לראות כי ככל ש 
+\begin_inset Formula $n$
 \end_inset
 
- 
+ גדל השגיאה האמפירית גדלה, וכן השגיאה האמיתית קטנה 
 \end_layout
 
 \begin_layout Standard
 
 \lang hebrew
-ממסווג רנדומי לחלוטין היה מצופה שאחוז הדיוק יהיה )בתוחלת(
+כאשר מספר הדגימות מצומצם, סביר ש
 \family roman
 \series medium
 \shape up
@@ -1981,132 +2791,8 @@ Submitted to the programing section of the assignment.
 \uwave default
 \noun default
 \color inherit
-
-\begin_inset Formula $10\%$
-\end_inset
-
- שכן יש עשרה מספרים שיכולים להתקבל בהסתברות שווה.
-\end_layout
-
-\begin_layout Subsubsection*
-2.3
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align right
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename ../Figure_2.png
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Prediction accuracy as a function of 
-\begin_inset Formula $k$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\lang hebrew
-ניתן לראות כי ככל ש 
-\begin_inset Formula $k$
-\end_inset
-
- גדל כך אחוז הדיוק קטן.
- ניתן להסביר זאת מפירוש ריצת האלגוריתם באופן הבא : ככל ש 
-\begin_inset Formula $k$
-\end_inset
-
- גדל, 
-\begin_inset Quotes eld
-\end_inset
-
-
-\begin_inset Formula $pool$
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
- התמונות שעומד לרשות המסווג גדול יותר לכן נצפה לראות יותר שגיאות.
- למשל ניתן הסבר שיכול לשכנע: תמונות של הספרה 
-\begin_inset Formula $1$
-\end_inset
-
- ושל הספרה 
-\begin_inset Formula $7$
-\end_inset
-
- יכולות להיות דומות, בהינתן תמונה של הספרה 
-\begin_inset Formula $7$
-\end_inset
-
- שהאלגוריתם מקבל, הוא יחשב מרחקים מהתמונות הקרובות ביותר לפי המרחק האוקלידי.
- אם כן יש סיכוי לא מבוטל כי תמונות שמתוייגות כ 
-\begin_inset Formula $1$
-\end_inset
-
-, קרובות לתמונה שהאלגוריתם קיבל ולכן נמצאות ב 
-\begin_inset Quotes eld
-\end_inset
-
-
-\begin_inset Formula $pool$
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
- התמונות שעומד לרשות המסווג.
- אם התמונות התוייגות כ 
-\begin_inset Formula $1$
-\end_inset
-
- ב 
-\begin_inset Quotes eld
-\end_inset
-
-
-\begin_inset Formula $pool$
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
- הן השכיחות ביותר, האלגוריתם ישגה ויתייג את התמונה כתמונה של הספרה 
-\begin_inset Formula $1$
-\end_inset
-
-.
-
+\lang english
+ERM
 \family roman
 \series medium
 \shape up
@@ -2119,29 +2805,162 @@ Prediction accuracy as a function of
 \uwave off
 \noun off
 \color none
-\lang english
- 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align right
-
 \lang hebrew
-כבאופן מובהק ניתן לראות כי עבור 
-\begin_inset Formula $k=1$
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+יחזיר היפותזה בעלת שגיאה קרובה מאוד ל 
+\begin_inset Formula $0$
 \end_inset
 
- מתקבל הדיוק הטוב ביותר.
+, ולכן יש שונות גבוהה באינטרוולים ש
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+ERM
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+יחסיר וניתן לראות זאת עפ
+\begin_inset Quotes erd
+\end_inset
+
+י שגיאת האמת )בכחול(.
+ ככל ש 
+\begin_inset Formula $n$
+\end_inset
+
+ גדל אנו נצפה ש
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+ERM
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+יחזיר היפותזה קרובה מאוד להיפותזה בעלת שגיאת האמת הקטנה ביותר, שכן הערכה
+ להתפלגות האמיתית גדלה )ברמת וודאות(.
+ ניתן לראות כי אכן זה המצב שכן שגיאת האמת עבור 
+\begin_inset Formula $n$
+\end_inset
+
+ גדולים )קטנה(.
+ סביר להעריך כי עבור 
+\begin_inset Formula $n$
+\end_inset
+
+ גדולים יותר ויותר המרחק בין השגיאה האמפירית לאמיתית יצטמצם.
 \end_layout
 
-\begin_layout Subsubsection*
-2.4
+\begin_layout Subsection*
+(c) 
 \end_layout
 
 \begin_layout Standard
 \noindent
-\align right
+\align center
 \begin_inset Float figure
 placement H
 wide false
@@ -2152,8 +2971,8 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename ../Figure_3.png
-	scale 80
+	filename c.png
+	scale 60
 
 \end_inset
 
@@ -2164,8 +2983,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Prediction accuracy as a function of 
-\begin_inset Formula $n$
+empirical and true errors as a function of 
+\begin_inset Formula $k$
 \end_inset
 
 
@@ -2178,70 +2997,219 @@ Prediction accuracy as a function of
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \lang hebrew
 ניתן לראות כי ככל ש 
-\begin_inset Formula $n$
+\begin_inset Formula $k$
 \end_inset
 
- גדל כך אחוז הדיוק עולה.
- ניתן להסביר שעבור 
-\begin_inset Formula $n$
+ השגיאה האמפירית קטנה )אם כי ניתן לראות כי עד 
+\begin_inset Formula $k=3$
 \end_inset
 
- קטן, תמונה בעלת 
-\begin_inset Formula $Label=L_{1}$
+ ישנה ירידה חדה בשגיאה ואחריה ירידה מתונה( כלומר 
+\begin_inset Formula $k^{*}=10$
 \end_inset
 
- הניתנת לאלגוריתם, תהיה קרובה לתמונה מתוייגת בעלת 
-\begin_inset Formula $Label=L_{2}$
-\end_inset
 
- כאשר 
-\begin_inset Formula $L_{1}\neq L_{2}$
-\end_inset
+\end_layout
 
- בסיכוי גבוה יותר )כיוון שמספר התמונות להשוות את המרחק קטן יחסית, והאלגוריתם
- קובע עבור התמונה היחידה, עד כדי מרחקים שווים, הקרובה ביותר אליו( .
- ככל שיש יותר מידע כך סביר יותר שתמונה בעלת 
-\begin_inset Formula $Label=L_{1}$
-\end_inset
+\begin_layout Standard
 
- הניתנת לאלגוריתם, תהיה קרובה ביותר לתמונה מתוייגת בעלת אותו 
-\begin_inset Formula $L_{1}$
-\end_inset
-
-.
+\lang hebrew
+ניתן לייחס זאת ל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+overfitting
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
  
 \end_layout
 
 \begin_layout Standard
 
 \lang hebrew
-ניתן לראות שהחל מ 
-\begin_inset Formula $n=2000$
+אנו שמים לב כי לקיחת היפותזה של
+\begin_inset Formula $k^{*}$
 \end_inset
 
- לערך, תוספת 
-\begin_inset Formula $x$
+ לא בהכרח טובה שכן עבור 
+\begin_inset Formula $k^{*}>k=3$
 \end_inset
 
- תמונות מתוייגות אינה באופן מובהק כמו תוספת ל 
-\begin_inset Formula $100<n<1000$
+ מתקבלת שגיאת אמת קטנה ביותר - כמצופה )השגיאה הטובה ביותר נמצאת במחלקה 
+\begin_inset Formula $\H_{3}$
 \end_inset
 
- ובאופן כללי ניתן לראות שהגרף מתנהג דומה לגרף 
-\begin_inset Formula $\log$
-\end_inset
-
- .
- אפשר להסביר זאת שעבור מספיק תמונות מתוייגות )וכיוון שמספר התיוגים 
-\begin_inset Formula $\left\{ 0,1,\ldots,9\right\} $
-\end_inset
-
- קטן יחסית והתמונות אינן מורכבות, יחסית( האלגוריתם יצליח לקבוע ברמת מובהקות
- טובה את התיוג המתאים.
+ (.
  
+\end_layout
+
+\begin_layout Subsection*
+(d) 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename d.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+holdout
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The best empirical k : 3 
+\end_layout
+
+\begin_layout Standard
+The best hyposesis that found represent as a set of intervals: 
+\begin_inset Formula 
+\[
+\left[\left(0.000279,0.199099\right),\left(0.399137,0.599962\right),\left(0.800406,0.995437\right)\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אנו רואים כי ההיפותזה עבור 
+\begin_inset Formula $k=3$
+\end_inset
+
+ מקבלת את השגיאה האמפירית הקטנה ביותר עבור דגימת ה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+test
+\lang hebrew
+ ולכן לפי שיטת 
+\lang english
+holdout
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ אנו נבחר בהיפותזה לעיל.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נשים לב כי ההיפותזה שחזרה קרובה מאוד להיפותזה האופטימלית : 
+\begin_inset Formula 
+\[
+\left[\left(0,0.2\right),\left(0.4,0.6\right),\left(0.8,1\right)\right]
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body

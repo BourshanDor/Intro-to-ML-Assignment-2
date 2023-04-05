@@ -1769,6 +1769,69 @@ Union Of Intervals
 \begin_layout Standard
 
 \lang hebrew
+נגדיר את מרחב ההתפלגות המשותפת באופן הבא: 
+\begin_inset Formula $\X=\left[0,1\right]$
+\end_inset
+
+ ו 
+\begin_inset Formula $\Y=\left\{ 0,1\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נגדיר קבוצת אינטרוולים: 
+\begin_inset Formula $I=\left\{ \left[l_{1},u_{1}\right],\ldots,\left[l_{k},u_{k}\right]\right\} $
+\end_inset
+
+ : איחוד של 
+\begin_inset Formula $k$
+\end_inset
+
+ אינטרוולים כך שמתקיים :
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $0\leq l_{1}\leq u_{1}\leq\ldots\leq u_{k}\leq1$
+\end_inset
+
+.
+ לכל קבוצת אינטרוולים שכזו נגדיר היפותזה: 
+\begin_inset Formula 
+\[
+h_{I}\left(x\right)=\begin{cases}
+1 & \text{ if }\ x\in\bigcup_{i=1}^{k}\left[l_{i},u_{i}\right]\\
+0 & \text{\ensuremath{otherwise}}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+לבסוף נגדיר את מחלקת ההיפותזות הבאה: 
+\begin_inset Formula 
+\[
+\H_{k}=\left\{ h_{I}\mid I=\left\{ \left[l_{1},u_{1}\right],\ldots,\left[l_{k},u_{k}\right]\right\} ,0\leq l_{1}\leq u_{1}\leq\ldots\leq u_{k}\leq1\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
 נראה כי 
 \begin_inset Formula $VC\dim\left(\H_{k}\right)=2k$
 \end_inset
@@ -1779,7 +1842,461 @@ Union Of Intervals
 \begin_layout Standard
 
 \lang hebrew
-אנו נדרשים להראות ש
+אנו נדרשים להראות שני שלבים : 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang hebrew
+תניתן לנפץ קבוצה בת 
+\begin_inset Formula $2k$
+\end_inset
+
+ איברים.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang hebrew
+לא ניתן לנפץ קבוצה גדולה יותר.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אם כן :
+\end_layout
+
+\begin_layout Enumerate
+
+\lang hebrew
+אם כן נראה כי יש קבוצה בת
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula $2k$
+\end_inset
+
+ איברים הניתנת לניפוץ.
+ כלומר אנו נראה כי קיימת קבוצת נקודות )בגודל 
+\begin_inset Formula $2k$
+\end_inset
+
+( שניתן לתייגן ב 
+\begin_inset Formula $2^{2k}$
+\end_inset
+
+ דרכים שונות.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+יהיו 
+\begin_inset Formula $2k$
+\end_inset
+
+ נקודות בקטע 
+\begin_inset Formula $\left[0,1\right]$
+\end_inset
+
+ המקיימות 
+\begin_inset Formula 
+\[
+0<x_{1}<x_{2}<\ldots<x_{2k}<1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+תהיי 
+\begin_inset Formula $\L_{1}$
+\end_inset
+
+ קבוצת הנקודות אותן אנו מענוניינים לתייג כ 
+\begin_inset Formula $'1'$
+\end_inset
+
+.
+ ובאופן זהה את 
+\begin_inset Formula $\L_{0}$
+\end_inset
+
+ את קבוצת הנקודות שאנו מעוניינים לתייג כ 
+\begin_inset Formula $'0'$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+אם 
+\begin_inset Formula $q=\left|\L_{1}\right|\leq k$
+\end_inset
+
+ :
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+מצפיפות הממשיים ניתן לעטוף כל נקודה 
+\begin_inset Formula $x_{i_{j}}\in\L_{1}$
+\end_inset
+
+ בקטע 
+\begin_inset Formula $\left[l_{i_{j}},u_{i_{j}}\right]$
+\end_inset
+
+ כך שלכל 
+\begin_inset Formula $1\leq r\leq2k$
+\end_inset
+
+ , כך ש 
+\begin_inset Formula $x_{r}\neq x_{i_{j}}$
+\end_inset
+
+ מתקיים כי: 
+\begin_inset Formula $x_{r}\notin\left[l_{i_{j}},u_{i_{j}}\right]$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+עבור 
+\begin_inset Formula $k-q$
+\end_inset
+
+ שנותר לקבוע את זהותם, מצפיפות הרציונלים קיים קטע 
+\begin_inset Formula $\left[l_{*},u_{*}\right]$
+\end_inset
+
+כך שלכל 
+\begin_inset Formula $1\leq i\leq2k$
+\end_inset
+
+ , כך ש מתקיים כי: 
+\begin_inset Formula $x_{i}\notin\left[l_{*},u_{*}\right]$
+\end_inset
+
+.
+ נגדיר את כל הקטעים הנותרים כקטע זה.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+אם כך לכל 
+\begin_inset Formula $x_{j}\notin\L_{1}$
+\end_inset
+
+ מתקיים כי תיוגו הוא 
+\begin_inset Formula $'0'$
+\end_inset
+
+ וכן לכל 
+\begin_inset Formula $x_{i}\in\L_{1}$
+\end_inset
+
+ מתקיים כי תיוגו 
+\begin_inset Formula $'1'$
+\end_inset
+
+, כנדרש.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\lang hebrew
+אם 
+\begin_inset Formula $q=\left|\L_{1}\right|>k$
+\end_inset
+
+ :
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+נתייחס לנקודות סמוכות, קרי 
+\begin_inset Formula $x_{i_{j}},x_{i_{j}+1},\ldots,x_{i_{j}+r}\in\L_{1}$
+\end_inset
+
+ כנקודה יחידה 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+, ועבור 
+\begin_inset Formula $x_{j}\in\L_{1}$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $x_{j-1},x_{j+1}\notin\L_{1}$
+\end_inset
+
+ נתייחס גם כן כ 
+\begin_inset Formula $y_{j}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נסמן ב 
+\begin_inset Formula $Y$
+\end_inset
+
+ המוגדרת על ידי נקודות אלה.
+ נטען כי 
+\begin_inset Formula $\left|Y\right|\leq k$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נניח בשלילה כי 
+\begin_inset Formula $\left|Y\right|\geq k+1$
+\end_inset
+
+ כלומר אנו טוענים כי ישנן 
+\begin_inset Formula $k+1$
+\end_inset
+
+ נקודות שאינן בסמיכות, כלומר לכל 
+\begin_inset Formula $y_{i}\in Y$
+\end_inset
+
+ קיימת נקודה )אחת לפחות( כך ש 
+\begin_inset Formula $x_{j}\in\L_{0}$
+\end_inset
+
+ המפרידה בין 
+\begin_inset Formula $2$
+\end_inset
+
+ נקודות ב 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ כדי לייצר הפרדה נדרשות לפחות 
+\begin_inset Formula $k$
+\end_inset
+
+ נקודות בקבוצה 
+\begin_inset Formula $\L_{0}$
+\end_inset
+
+ אולם מתקיים כי 
+\begin_inset Formula $\left|\L_{0}\right|<k$
+\end_inset
+
+.
+ סתירה.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+לפיכך 
+\begin_inset Formula $\left|Y\right|\leq k$
+\end_inset
+
+ ואם כן חזרנו למקרה שכבר טופל, מצפיפות הממשיים נוכל לעטוף נקודות סמוכות
+ ב 
+\begin_inset Formula $\L_{1}$
+\end_inset
+
+ בקטע יחיד שלא מכיל אף נקודה אחרת מלבדן.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\lang hebrew
+עברנו על כל האפשרויות, ונוכחנו לדעת שניתן לתייג את 
+\begin_inset Formula $2k$
+\end_inset
+
+ הנקודות ב 
+\begin_inset Formula $2^{2k}$
+\end_inset
+
+ דרכים שונות.
+ אם כך הצלחנו לנתץ קבוצה המונה 
+\begin_inset Formula $2k$
+\end_inset
+
+ איברים.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\lang hebrew
+נראה כי לא ניתן לנתץ מדגם המכיל 
+\begin_inset Formula $r>2k$
+\end_inset
+
+ נקודות.
+ נעיר כי מהגדרת הפונקציות במחלקת ההיפותזות, עבור נקודות בדגימה המקיימות
+ 
+\begin_inset Formula $x_{i}=x_{j}$
+\end_inset
+
+ עבור 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+, מתקיים כי התייוג של נקודות אלה זהה, ולכן לא ניתן לנתץ מדגם שכזה.
+ אם כן נניח כי כל הנקודות במדגם שונות.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\lang hebrew
+נראה שלא ניתן לתייג את הנקודות האי זוגיות במדגם ב 
+\begin_inset Formula $'1'$
+\end_inset
+
+ ונסיים.
+ כדי לתייג את הנקודות האי זוגיות אנו נדרשים לאינטרוול 
+\begin_inset Formula $I_{1}$
+\end_inset
+
+ שיעטוף את 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ ולא את 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ ואינטרוול 
+\begin_inset Formula $I_{2}$
+\end_inset
+
+ שיעטוף את 
+\begin_inset Formula $x_{3}$
+\end_inset
+
+ ולא את 
+\begin_inset Formula $x_{2,}x_{4}$
+\end_inset
+
+ וכו' 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+סה
+\begin_inset Quotes erd
+\end_inset
+
+כ נדרשים לפחות 
+\begin_inset Formula $k+1$
+\end_inset
+
+ אינטרוולים שונים, למשל עבור מדגם בגודל 
+\begin_inset Formula $2k+1$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+0\leq l_{1}\leq x_{1}\leq u_{1}<x_{2}<l_{2}\leq x_{3}\leq u_{2}<\ldots<l_{k+1}\leq x_{2k+1}\leq u_{k+1}\leq1
+\]
+
+\end_inset
+
+אולם מחלקת ההיפותזות מורכבת מהיפותזות של 
+\begin_inset Formula $k$
+\end_inset
+
+ אינטרוולים.
+ כלומר קבוצץ דגימה המקיימת שגודלה גדול מ 
+\begin_inset Formula $2k$
+\end_inset
+
+ אינה ניתנת לניפוץ.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כנדרש.
 \end_layout
 
 \begin_layout Standard
@@ -1797,102 +2314,375 @@ Union Of Intervals
 \end_layout
 
 \begin_layout Section
-Optimal Classifiers and Decision Rules
-\end_layout
-
-\begin_layout Subsection
-Poblem
-\end_layout
-
-\begin_layout Subsubsection
-section
+Prediction by polynomials
 \end_layout
 
 \begin_layout Standard
 
 \lang hebrew
-יהיו 
-\begin_inset Formula $X,Y$
+בהינתן פולינום 
+\begin_inset Formula $P:\mathbb{R}\rightarrow\mathbb{R}$
 \end_inset
 
- משתנים מקריים כך ש 
-\begin_inset Formula $Y$
+ נגדיר את ההיפותזה 
+\begin_inset Formula $h_{P}:\mathbb{R}^{2}\rightarrow\left\{ 0,1\right\} $
 \end_inset
 
- מקבל ערכים ב 
-\begin_inset Formula $\mathcal{Y}=\left\{ 1,\ldots,L\right\} $
+ ע
+\begin_inset Quotes erd
 \end_inset
 
-.
- נגדיר 
-\begin_inset Formula $\ell_{0-1}$
+י : 
+\begin_inset Formula 
+\[
+h_{P}\left(x_{1},x_{2}\right)=\begin{cases}
+1 & P\left(x_{1}\right)\geq x_{2}\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+ נגדיר את המחלקת ההיפותזות הבאה : 
+\begin_inset Formula 
+\[
+\H_{poly}=\left\{ h_{P}\mid P\ \text{is a polynomial}\right\} 
+\]
+
 \end_inset
 
 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-\lang english
-0-1 loos function
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\lang hebrew
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-שהוגדרה בכיתה.
- 
 \end_layout
 
 \begin_layout Standard
 
 \lang hebrew
 נראה כי 
+\begin_inset Formula $VC\dim\left(\H_{poly}\right)=\infty$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נשתמש בעובדה כי בהינתן 
+\begin_inset Formula $x_{1},\ldots,x_{n}\in\mathbb{R}$
+\end_inset
+
+ שונים ו 
+\begin_inset Formula $z_{1},\ldots,z_{n}\in\mathbb{R}$
+\end_inset
+
+ קיים פולינום 
+\begin_inset Formula $P$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\deg\left(P\right)=n-1$
+\end_inset
+
+ כך ש לכל 
+\begin_inset Formula $1\leq i\leq n$
+\end_inset
+
+ מתקיים כי 
+\begin_inset Formula $P\left(x_{i}\right)=z_{i}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+יהיי 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נראה כי קיימת קבוצה בת 
+\begin_inset Formula $n$
+\end_inset
+
+ איברים הניתנת לניפוץ.
+ נסמן 
 \begin_inset Formula 
 \[
-h=\arg\min_{f:\X\rightarrow\Y}\E\left[\ell_{0-1}\left(Y,f\left(X\right)\right)\right]
+S=\left\{ \begin{pmatrix}x_{1}^{1}\\
+x_{2}^{1}
+\end{pmatrix},\ldots,\begin{pmatrix}x_{1}^{n}\\
+x_{2}^{n}
+\end{pmatrix}\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כך שמתקיים לכל 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ כי 
+\begin_inset Formula $x_{1}^{j}\neq x_{1}^{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+יהיו 
+\begin_inset Formula $y_{1},\ldots,y_{n}$
+\end_inset
+
+ התיוגים שאנו מעוניינים לייחס ל 
+\begin_inset Formula $\begin{pmatrix}x_{1}^{1}\\
+x_{2}^{1}
+\end{pmatrix},\ldots,\begin{pmatrix}x_{1}^{n}\\
+x_{2}^{n}
+\end{pmatrix}$
+\end_inset
+
+ בהתאמה.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נראה שקיים פולינום 
+\begin_inset Formula $P$
+\end_inset
+
+ בדרגה 
+\begin_inset Formula $n-1$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $h_{P}$
+\end_inset
+
+ מתייג כנדרש.
+ נגדיר פונקציה 
+\begin_inset Formula $\L:\left\{ 0,1\right\} \times\mathbb{R}^{2}\rightarrow\mathbb{R}$
+\end_inset
+
+ באופן הבא : 
+\begin_inset Formula 
+\[
+\L\left(y_{i},\left(x_{1}^{i},x_{2}^{i}\right)\right)=\begin{cases}
+x_{2}^{i} & \text{ if }\ y_{i}=1\\
+x_{2}^{i}-1 & \text{ if }\ y_{i}=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+קיים פולינום 
+\begin_inset Formula $P$
+\end_inset
+
+ כך ש 
+\begin_inset Formula $\deg\left(P\right)=n-1$
+\end_inset
+
+ כך ש לכל 
+\begin_inset Formula $1\leq i\leq n$
+\end_inset
+
+ מתקיים כי 
+\begin_inset Formula $P\left(x_{1}^{i}\right)=\L\left(y_{i},\left(x_{1}^{i},x_{2}^{i}\right)\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נתבונן ב 
+\begin_inset Formula $h_{P}$
+\end_inset
+
+ : 
+\begin_inset Formula 
+\[
+h_{P}\left(x_{1}^{i},x_{2}^{i}\right)=\begin{cases}
+1 & P\left(x_{1}^{i}\right)\geq x_{2}^{i}\\
+0 & otherwise
+\end{cases}=\begin{cases}
+1 & \L\left(y_{i},\left(x_{1}^{i},x_{2}^{i}\right)\right)\geq x_{2}^{i}\\
+0 & otherwise
+\end{cases}=\begin{cases}
+1 & y_{i}=1\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כלומר 
+\begin_inset Formula $h_{P}$
+\end_inset
+
+ מתייגת כנדרש.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+הנ
+\begin_inset Quotes erd
+\end_inset
+
+ל נכון לכל 
+\begin_inset Formula $n$
+\end_inset
+
+ ולכן מתקיים כי 
+\begin_inset Formula 
+\[
+VC\dim\left(\H_{poly}\right)=\infty
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Programing Assignment
+\end_layout
+
+\begin_layout Section*
+1.
+ Union Of Intervals
+\end_layout
+
+\begin_layout Subsection*
+(a) 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נניח כי ההתפלגות האמיתית 
+\begin_inset Formula $\Pr\left[x,y\right]=\Pr\left[y\mid x\right]\cdot\Pr\left[x\right]$
+\end_inset
+
+ נתונה ע
+\begin_inset Quotes erd
+\end_inset
+
+י : 
+\begin_inset Formula $X\sim U\left(\left[0,1\right]\right)$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\Pr\left[Y=1\mid X=x\right]=\begin{cases}
+0.8 & \text{ if }\ x\in\left[0,0.2\right]\cup\left[0.4,0.6\right]\cup\left[0.8,1\right]\\
+0.1 & \text{ if }\ x\in\left(0.2,0.4\right)\cup\left(0.6,0.8\right)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+מכך שאנו יודעים את ההתפלגות האמיתית אנו יודעים לחשב את 
+\begin_inset Formula $e_{P}\left(h\right)$
+\end_inset
+
+ קרי השגיאה תחת 
+\begin_inset Formula $h$
+\end_inset
+
+, לכל היפותזה 
+\begin_inset Formula $h\in\H_{k}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+ההיפותזה בעלת השגיאה הקטנה ביותר במחלקה 
+\begin_inset Formula $\H_{10}$
+\end_inset
+
+ קרי 
+\begin_inset Formula 
+\[
+h=\arg\min_{h\in\H_{10}}e_{P}\left(h\right)
+\]
+
+\end_inset
+
+ היא 
+\begin_inset Formula 
+\[
+h\left(x\right)=\begin{cases}
+1 & \text{ if }\ x\in\left[0,0.2\right]\cup\left[0.4,0.6\right]\cup\left[0.8,1\right]\\
+0 & \text{ if }\ x\in\left(0.2,0.4\right)\cup\left(0.6,0.8\right)
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+זאת תוצאה ישירה מהתרגיל הקודם בו הוכחנו כי 
+\begin_inset Formula 
+\[
+h=\arg\min_{f:\X\rightarrow\Y}\E\left[\ell_{0-1}\left(Y,f\left(X\right)\right)\right]=e_{P}\left(h\right)
 \]
 
 \end_inset
@@ -1912,14 +2702,49 @@ h\left(x\right)=\arg\max_{i\in\Y}\Pr\left[Y=i\mid X=x\right]
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection*
+(b) 
+\end_layout
 
-\lang hebrew
-לפי ההגדרה 
-\begin_inset Formula 
-\[
-\E\left[\ell_{0-1}\left(Y,f\left(X\right)\right)\right]=\sum_{x\in\X,y\in\Y}\Pr\left[X=x,Y=y\right]\ell_{0-1}\left(y,f\left(x\right)\right)
-\]
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename b.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+empirical and true errors, averaged across the 
+\begin_inset Formula $T$
+\end_inset
+
+, as a function of 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1929,79 +2754,384 @@ h\left(x\right)=\arg\max_{i\in\Y}\Pr\left[Y=i\mid X=x\right]
 \begin_layout Standard
 
 \lang hebrew
-כאשר אנו משתמשים בהצגה זו רק לצורך הצגה נוחה וכן יכול להיות כי הקבוצה 
-\begin_inset Formula $\X$
+ניתן לראות כי ככל ש 
+\begin_inset Formula $n$
 \end_inset
 
- אינה בת מנייה.
+ גדל השגיאה האמפירית גדלה, וכן השגיאה האמיתית קטנה 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כאשר מספר הדגימות מצומצם, סביר ש
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+ERM
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+יחזיר היפותזה בעלת שגיאה קרובה מאוד ל 
+\begin_inset Formula $0$
+\end_inset
+
+, ולכן יש שונות גבוהה באינטרוולים ש
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+ERM
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+יחסיר וניתן לראות זאת עפ
+\begin_inset Quotes erd
+\end_inset
+
+י שגיאת האמת )בכחול(.
+ ככל ש 
+\begin_inset Formula $n$
+\end_inset
+
+ גדל אנו נצפה ש
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+ERM
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+יחזיר היפותזה קרובה מאוד להיפותזה בעלת שגיאת האמת הקטנה ביותר, שכן הערכה
+ להתפלגות האמיתית גדלה )ברמת וודאות(.
+ ניתן לראות כי אכן זה המצב שכן שגיאת האמת עבור 
+\begin_inset Formula $n$
+\end_inset
+
+ גדולים )קטנה(.
+ סביר להעריך כי עבור 
+\begin_inset Formula $n$
+\end_inset
+
+ גדולים יותר ויותר המרחק בין השגיאה האמפירית לאמיתית יצטמצם.
+\end_layout
+
+\begin_layout Subsection*
+(c) 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename c.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+empirical and true errors as a function of 
+\begin_inset Formula $k$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+ניתן לראות כי ככל ש 
+\begin_inset Formula $k$
+\end_inset
+
+ השגיאה האמפירית קטנה )אם כי ניתן לראות כי עד 
+\begin_inset Formula $k=3$
+\end_inset
+
+ ישנה ירידה חדה בשגיאה ואחריה ירידה מתונה( כלומר 
+\begin_inset Formula $k^{*}=10$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+ניתן לייחס זאת ל
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+overfitting
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
  
 \end_layout
 
 \begin_layout Standard
 
 \lang hebrew
-נקבע 
-\begin_inset Formula $x$
+אנו שמים לב כי לקיחת היפותזה של
+\begin_inset Formula $k^{*}$
 \end_inset
 
-.
- לפיכך אנו נדרשים למצוא 
-\begin_inset Formula $f$
+ לא בהכרח טובה שכן עבור 
+\begin_inset Formula $k^{*}>k=3$
 \end_inset
 
- המביאה למינימום את הביטוי הבא : 
-\begin_inset Formula 
-\[
-\sum_{y\in\Y}\Pr\left[X=x,Y=y\right]\ell_{0-1}\left(y,f\left(x\right)\right)=\sum_{y\in\Y}\Pr\left[Y=y\mid X=x\right]\Pr\left[X=x\right]\cdot\ell_{0-1}\left(y,f\left(x\right)\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-כעת נשים לב כי 
-\begin_inset Formula $\Pr\left[X=x\right]$
-\end_inset
-
- קבוע אי שלילי ולכן אנו נדרשים למעשה למנמם את הסכום הבא : 
-\begin_inset Formula 
-\[
-\sum_{y\in\Y}\Pr\left[Y=y\mid X=x\right]\ell_{0-1}\left(y,f\left(x\right)\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-מתקיים כי 
-\begin_inset Formula $\Pr\left[Y=y\mid X=x\right]\geq0$
-\end_inset
-
- ולכן אנו נרצה להתעלם מהערך 
-\begin_inset Formula $y$
-\end_inset
-
- כך ש 
-\begin_inset Formula $\Pr\left[Y=i\mid X=x\right]$
-\end_inset
-
- גדול ביותר עבורו )כאשר השתמשנו בהגדרת/ מסקנה מהגדרת 
-\begin_inset Formula $\ell_{0-1}$
+ מתקבלת שגיאת אמת קטנה ביותר - כמצופה )השגיאה הטובה ביותר נמצאת במחלקה 
+\begin_inset Formula $\H_{3}$
 \end_inset
 
  (.
- אם כן: 
+ 
+\end_layout
+
+\begin_layout Subsection*
+(d) 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename d.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+holdout
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The best empirical k : 3 
+\end_layout
+
+\begin_layout Standard
+The best hyposesis that found represent as a set of intervals: 
 \begin_inset Formula 
 \[
-\boxed{h\left(x\right)=\arg\max_{i\in\Y}\Pr\left[Y=i\mid X=x\right]}
+\left[\left(0.00027967560026959104,0.19909940835467776\right),\left(0.3991372698421989,0.5999624693547357\right),\left(0.8004062971705008,0.9954370369289661\right)\right]
 \]
 
 \end_inset
@@ -2009,57 +3139,14 @@ h\left(x\right)=\arg\max_{i\in\Y}\Pr\left[Y=i\mid X=x\right]
 
 \end_layout
 
-\begin_layout Subsubsection
-section 
-\end_layout
-
 \begin_layout Standard
 
 \lang hebrew
-יהיו 
-\begin_inset Formula $X,Y$
+אנו רואים כי ההיפותזה עבור 
+\begin_inset Formula $k=3$
 \end_inset
 
- משתנים מקריים כך ש 
-\begin_inset Formula $Y$
-\end_inset
-
- מקבל ערכים ב 
-\begin_inset Formula $\mathcal{Y}=\left\{ 0,1\right\} $
-\end_inset
-
-.
- נגדיר 
-\begin_inset Formula $\Delta$
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-פונקציית
+ מקבלת את השגיאה האמפירית הקטנה ביותר עבור דגימת ה
 \family roman
 \series medium
 \shape up
@@ -2086,1184 +3173,40 @@ section
 \noun default
 \color inherit
 \lang english
-loss
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
+test
 \lang hebrew
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-אסימטרית: 
-\begin_inset Formula 
-\[
-\Delta\left(y,\hat{y}\right)=\begin{cases}
-0 & y=\hat{y}\\
-a & y=0,\hat{y}=1\\
-b & y=1,\hat{y}=0
-\end{cases}
-\]
-
-\end_inset
-
-כאשר 
-\begin_inset Formula $a,b\in\left(0,1\right]$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-נמצא 
-\begin_inset Formula 
-\[
-h=\arg\min_{f:\X\rightarrow\Y}\E\left[\Delta\left(Y,f\left(X\right)\right)\right]
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-לפי ההגדרה 
-\begin_inset Formula 
-\[
-\E\left[\Delta\left(Y,f\left(X\right)\right)\right]=\sum_{x\in\X,y\in\Y}\Pr\left[X=x,Y=y\right]\Delta\left(y,f\left(x\right)\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-כאשר אנו משתמשים בהצגה זו רק לצורך הצגה נוחה וכן יכול להיות כי הקבוצה 
-\begin_inset Formula $\X$
-\end_inset
-
- אינה בת מנייה.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-נקבע 
-\begin_inset Formula $x$
-\end_inset
-
-.
- לפיכך אנו נדרשים למצוא 
-\begin_inset Formula $f$
-\end_inset
-
- המביאה למינימום את הביטוי הבא : 
-\begin_inset Formula 
-\[
-\sum_{y\in\Y}\Pr\left[X=x,Y=y\right]\Delta\left(y,f\left(x\right)\right)=\sum_{y\in\Y}\Pr\left[Y=y\mid X=x\right]\Pr\left[X=x\right]\cdot\Delta\left(y,f\left(x\right)\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-כעת נשים לב כי 
-\begin_inset Formula $\Pr\left[X=x\right]$
-\end_inset
-
- קבוע אי שלילי ולכן אנו נדרשים למעשה למנמם את הסכום הבא : 
-\begin_inset Formula 
-\[
-\Pr\left[Y=0\mid X=x\right]\Delta\left(0,f\left(x\right)\right)+\Pr\left[Y=1\mid X=x\right]\Delta\left(1,f\left(x\right)\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-האפשרויות שלנו נתונות ע
-\begin_inset Quotes erd
-\end_inset
-
-י 
-\begin_inset Formula 
-\begin{align*}
- & \Pr\left[Y=0\mid X=x\right]\Delta\left(0,1\right)+\Pr\left[Y=1\mid X=x\right]\Delta\left(1,1\right) & \left(1\right)\\
- & \Pr\left[Y=0\mid X=x\right]\Delta\left(0,0\right)+\Pr\left[Y=1\mid X=x\right]\Delta\left(1,0\right) & \left(2\right)
-\end{align*}
-
-\end_inset
-
-כלומר 
-\begin_inset Formula 
-\begin{align*}
- & \Pr\left[Y=0\mid X=x\right]\cdot a & \left(1\right)\\
- & \Pr\left[Y=1\mid X=x\right]\cdot b & \left(2\right)
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-אם כן כדי למנמם נגדיר : 
-\begin_inset Formula 
-\[
-\boxed{h\left(x\right)=\begin{cases}
-0 & \Pr\left[Y=0\mid X=x\right]\cdot a>\Pr\left[Y=1\mid X=x\right]\cdot b\\
-1 & otherwise
-\end{cases}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Problem 2
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-יהיו 
-\begin_inset Formula $X,Y$
-\end_inset
-
- משתנים מקריים כך ש 
-\begin_inset Formula $Y$
-\end_inset
-
- מקבל ערכים ב 
-\begin_inset Formula $\mathcal{Y}=\left\{ 0,1\right\} $
-\end_inset
-
- ו 
-\begin_inset Formula $X$
-\end_inset
-
- מקבל ערכים ב 
-\begin_inset Formula $\X$
-\end_inset
-
-.
- נניח כי אנו מעוניינים למצוא פונקציית חיזוי 
-\begin_inset Formula $h:\X\rightarrow\left[0,1\right]$
-\end_inset
-
-.
- נגדיר 
-\begin_inset Formula $\Delta_{log}$
-\end_inset
-
- 
-\begin_inset Formula 
-\[
-\Delta_{log}\left(y,\hat{y}\right)=-y\log\left(\hat{y}\right)-\left(1-y\right)\log\left(1-\hat{y}\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-נמצא 
-\begin_inset Formula 
-\[
-h=\arg\min_{f:\X\rightarrow\left[0,1\right]}\E\left[\Delta_{log}\left(Y,f\left(X\right)\right)\right]
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-לפי ההגדרה 
-\begin_inset Formula 
-\[
-\E\left[\Delta\left(Y,f\left(X\right)\right)\right]=\sum_{x\in\X,y\in\Y}\Pr\left[X=x,Y=y\right]\Delta_{log}\left(y,f\left(x\right)\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-כאשר אנו משתמשים בהצגה זו רק לצורך הצגה נוחה וכן יכול להיות כי הקבוצה 
-\begin_inset Formula $\X$
-\end_inset
-
- אינה בת מנייה.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-נקבע 
-\begin_inset Formula $x$
-\end_inset
-
-.
- לפיכך אנו נדרשים למצוא 
-\begin_inset Formula $f$
-\end_inset
-
- המביאה למינימום את הביטוי הבא : 
-\begin_inset Formula 
-\[
-\sum_{y\in\Y}\Pr\left[X=x,Y=y\right]\Delta_{log}\left(y,f\left(x\right)\right)=\sum_{y\in\Y}\Pr\left[Y=y\mid X=x\right]\Pr\left[X=x\right]\cdot\Delta_{log}\left(y,f\left(x\right)\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-כעת נשים לב כי 
-\begin_inset Formula $\Pr\left[X=x\right]$
-\end_inset
-
- קבוע אי שלילי ולכן אנו נדרשים למעשה למנמם את הסכום הבא : 
-\begin_inset Formula 
-\[
-\Pr\left[Y=0\mid X=x\right]\Delta_{log}\left(0,f\left(x\right)\right)+\Pr\left[Y=1\mid X=x\right]\Delta_{log}\left(1,f\left(x\right)\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-נסמן לשם הנוחות
-\begin_inset Formula 
-\begin{align*}
- & \Pr\left[Y=0\mid X=x\right]=p_{0} & \left(1\right)\\
- & \Pr\left[Y=1\mid X=x\right]=p_{1} & \left(2\right)
-\end{align*}
-
-\end_inset
-
-כעת נכתוב מחדש את הסכום עם כתיבה מפורשת של 
-\begin_inset Formula $\Delta_{log}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-\begin_inset Formula 
-\[
--p_{o}\cdot\log\left(1-f\left(x\right)\right)+p_{1}-p_{1}\cdot\log\left(f\left(x\right)\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-ברור כי 
-\begin_inset Formula $0<f\left(x\right)<1$
-\end_inset
-
- אחרת הביטוי אינו מוגדר.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-כעת נגזור לפי 
-\begin_inset Formula $f\left(x\right)$
-\end_inset
-
- ונשווה ל
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-0
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\numeric off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-כדי למצוא מינימום, ונקבל 
-\begin_inset Formula 
-\[
-\frac{p_{0}}{1-f\left(x\right)}-\frac{p_{1}}{f\left(x\right)}=0\implies f\left(x\right)=p_{1}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-כאשר השתמשנו בעובדה כי 
-\begin_inset Formula $p_{0}+p_{1}=1$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-נוודא כי אכן מינימום ע
-\begin_inset Quotes erd
-\end_inset
-
-י גזירה נוספת : 
-\begin_inset Formula 
-\[
-\left(\frac{p_{0}}{1-f\left(x\right)}-\frac{p_{1}}{f\left(x\right)}\right)^{'}=\frac{p_{0}}{\left(1-f\left(x\right)\right)^{2}}+\frac{p_{1}}{\left(f\left(x\right)\right)^{2}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-כעת נציב 
-\begin_inset Formula $f\left(x\right)=p_{1}$
-\end_inset
-
- ואנו מניחים כי 
-\begin_inset Formula $p_{1}\neq0,1$
-\end_inset
-
- ונקבל כי 
-\begin_inset Formula 
-\[
-\frac{p_{0}}{\left(1-p_{1}\right)^{2}}+\frac{p_{1}}{\left(p_{1}\right)^{2}}>0
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-ולכן התקבל מינימום.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-אם כך נגדיר 
-\begin_inset Formula 
-\[
-\boxed{h\left(x\right)=\Pr\left[Y=1\mid X=x\right]=p_{1}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Problem
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-יהיו 
-\begin_inset Formula $X,Y$
-\end_inset
-
- משתנים מקריים כך ש 
-\begin_inset Formula $Y$
-\end_inset
-
- מקבל ערכים ב 
-\begin_inset Formula $\mathcal{Y}=\left\{ 0,1\right\} $
-\end_inset
-
- וכן 
-\begin_inset Formula $\X=\mathbb{R}$
-\end_inset
-
- בהתאמה .
- נניח כי מתקיים 
-\begin_inset Formula $X_{\mid Y=0}\sim\mathcal{N}\left(\mu,\sigma_{0}^{2}\right)$
-\end_inset
-
- וכן 
-\begin_inset Formula $X_{\mid Y=1}\sim\mathcal{N}\left(\mu,\sigma_{1}^{2}\right)$
-\end_inset
-
- כאשר 
-\begin_inset Formula $\sigma_{0}\neq\sigma_{1}$
-\end_inset
-
-.
- נניח כי 
-\begin_inset Formula $\Pr\left[Y=1\right]=p_{1}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-נמצא את מסווג אופטימלי 
-\begin_inset Formula $h:\mathbb{R}\rightarrow\left\{ 0,1\right\} $
-\end_inset
-
- שמביא למינימום את 
-\begin_inset Formula $\E\left[\ell_{0-1}\left(Y,h\left(X\right)\right)\right]$
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-לפי ההגדרה אם כן: 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-\begin_inset Formula 
-\[
-\E\left[\ell_{0-1}\left(Y,h\left(X\right)\right)\right]=\sum_{x\in\X,y\in\Y}\Pr\left[X=x,Y=y\right]\ell_{0-1}\left(y,h\left(x\right)\right)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-נקבע 
-\begin_inset Formula $x$
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-\begin_inset Formula 
-\begin{align*}
- & \sum_{y\in\Y}\Pr\left[X=x,Y=y\right]\ell_{0-1}\left(y,h\left(x\right)\right)=\\
-= & f_{X_{\mid Y=0}}\left(x\right)\Pr\left[Y=0\right]\ell_{0-1}\left(0,h\left(x\right)\right)+f_{X_{\mid Y=1}}\left(x\right)\Pr\left[Y=1\right]\ell_{0-1}\left(1,h\left(x\right)\right)\\
-= & f_{X_{\mid Y=0}}\left(x\right)\cdot\left(1-p_{1}\right)\cdot\ell_{0-1}\left(0,h\left(x\right)\right)+f_{X_{\mid Y=1}}\left(x\right)\cdot p_{1}\cdot\ell_{0-1}\left(1,h\left(x\right)\right)
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-כעת התנאי 
-\begin_inset Formula 
-\[
-h\left(x\right)=\begin{cases}
-0 & \frac{f_{X_{\mid Y=0}}\left(x\right)}{f_{X_{\mid Y=1}}\left(x\right)}>\frac{p_{1}}{\left(1-p_{1}\right)}\\
-1 & otherwise
-\end{cases}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-נפרש את הביטוי : נשים לב מהיות 
-\begin_inset Formula $f_{X_{\mid Y=y}}$
-\end_inset
-
- פונקצית צפיפות של משתנה גאוסייני היא חיובית )ולכן נוכל לחלק בה( וההסתברות
- 
-\begin_inset Formula $p_{1}\in\left(0,1\right)$
-\end_inset
-
-, אחרת לא יכול להיות כי 
-\begin_inset Formula $X_{\mid Y=y}$
-\end_inset
-
- משתנה גאוסייני.
- 
-\begin_inset Formula 
-\begin{align*}
-f_{X_{\mid Y=0}}\left(x\right)\cdot\left(1-p_{1}\right)>f_{X_{\mid Y=1}}\left(x\right)\cdot p_{1} & \text{\ensuremath{\iff}}\frac{f_{X_{\mid Y=0}}\left(x\right)}{f_{X_{\mid Y=1}}\left(x\right)}>\frac{p_{1}}{\left(1-p_{1}\right)}\\
- & \text{\ensuremath{\iff}}\frac{\frac{1}{\sigma_{0}\sqrt{2\pi}}\exp\left(-\frac{\left(x-\mu\right)^{2}}{2\sigma_{0}^{2}}\right)}{\frac{1}{\sigma_{1}\sqrt{2\pi}}\exp\left(-\frac{\left(x-\mu\right)^{2}}{2\sigma_{1}^{2}}\right)}>\frac{p_{1}}{\left(1-p_{1}\right)}\\
- & \text{\ensuremath{\iff}}\frac{\sigma_{1}}{\sigma_{0}}\exp\left(\frac{\left(x-\mu\right)^{2}}{2\sigma_{1}^{2}}-\frac{\left(x-\mu\right)^{2}}{2\sigma_{0}^{2}}\right)>\frac{p_{1}}{\left(1-p_{1}\right)}\\
- & \iff\left(\frac{\left(x-\mu\right)^{2}}{2\sigma_{1}^{2}}-\frac{\left(x-\mu\right)^{2}}{2\sigma_{0}^{2}}\right)>\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
- & \iff\left(\frac{x^{2}-2x\mu+\mu^{2}}{2\sigma_{1}^{2}}-\frac{x^{2}-2x\mu+\mu^{2}}{2\sigma_{0}^{2}}\right)>\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
- & \iff\left(\frac{x^{2}-2x\mu+\mu^{2}}{2\sigma_{1}^{2}}-\frac{x^{2}-2x\mu+\mu^{2}}{2\sigma_{0}^{2}}\right)>\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
- & \iff\left(\frac{\sigma_{0}^{2}x^{2}-\sigma_{0}^{2}2x\mu+\sigma_{0}^{2}\mu^{2}-\sigma_{1}^{2}x^{2}+\sigma_{1}^{2}2x-\sigma_{1}^{2}\mu^{2}}{\sigma_{1}^{2}\sigma_{0}^{2}}\right)>2\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
- & \iff\left(\frac{x^{2}\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)+2x\mu\left(\sigma_{1}^{2}-\sigma_{0}^{2}\right)+\mu^{2}\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)}{\sigma_{1}^{2}\sigma_{0}^{2}}\right)>2\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
- & \iff x^{2}\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)+2x\mu\left(\sigma_{1}^{2}-\sigma_{0}^{2}\right)+\mu^{2}\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)>\sigma_{1}^{2}\sigma_{0}^{2}2\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)
-\end{align*}
-
-\end_inset
-
-נסמן 
-\begin_inset Formula $\sigma_{1}^{2}\sigma_{0}^{2}2\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)=C$
-\end_inset
-
- וכן 
-\begin_inset Formula $\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)=A$
-\end_inset
-
- :
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-נפריד כעת לשני מקרים )כיוון ש 
-\begin_inset Formula $A\neq0$
-\end_inset
-
- לפי הנתון( : 
-\end_layout
-
-\begin_layout Itemize
-
-\lang hebrew
-\begin_inset Formula $A>0$
-\end_inset
-
-:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-
-\lang hebrew
-\begin_inset Formula 
-\begin{align*}
- & \iff x^{2}A-A2x\mu+\mu^{2}A>C\\
- & \iff x^{2}-2\mu x+\mu^{2}>\frac{C}{A}\\
- & \iff\left(x-\mu\right)^{2}>\frac{C}{A}
-\end{align*}
-
-\end_inset
-
-אם 
-\begin_inset Formula $C<0$
-\end_inset
-
- : מתקיים לכל 
-\begin_inset Formula $x$
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-אם 
-\begin_inset Formula $C\geq0$
-\end_inset
-
- : 
-\begin_inset Formula 
-\[
-\iff\left(x-\mu\right)^{2}>\frac{C}{A}\iff\left|x-\mu\right|>\sqrt{\frac{C}{A}}\iff x>\mu+\sqrt{\frac{C}{A}}\text{\ or}\ x<-\mu+\sqrt{\frac{C}{A}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\lang hebrew
-\begin_inset Formula $A<0$
-\end_inset
-
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-
-\lang hebrew
-\begin_inset Formula 
-\begin{align*}
- & \iff x^{2}A-A2x\mu+\mu^{2}A>C\\
- & \iff x^{2}-2\mu x+\mu^{2}<\frac{C}{A}\\
- & \iff\left(x-\mu\right)^{2}<\frac{C}{A}
-\end{align*}
-
-\end_inset
-
-אם 
-\begin_inset Formula $C\leq0$
-\end_inset
-
- : : 
-\begin_inset Formula 
-\[
-\iff\left(x-\mu\right)^{2}<\frac{C}{A}\iff\left|x-\mu\right|<\sqrt{\frac{C}{A}}\iff-\mu+\sqrt{\frac{C}{A}}<x<\mu+\sqrt{\frac{C}{A}}
-\]
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-אם 
-\begin_inset Formula $C>0$
-\end_inset
-
- : אין 
-\begin_inset Formula $x$
-\end_inset
-
- המקיים את הנ
-\begin_inset Quotes erd
-\end_inset
-
-ל .
- 
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-
-\lang hebrew
-נסכם 
-\begin_inset Formula 
-\begin{align*}
-h\left(x\right) & =\begin{cases}
-0 & A>0,C<0\\
-0 & A>0,C\geq0,\left(x>\mu+\sqrt{\frac{C}{A}}\right)\bigvee\left(x<-\mu+\sqrt{\frac{C}{A}}\right)\\
-0 & A<0,C\leq0,-\mu+\sqrt{\frac{C}{A}}<x<\mu+\sqrt{\frac{C}{A}}\\
-1 & \text{otherwise}
-\end{cases}\\
- & C=\sigma_{1}^{2}\sigma_{0}^{2}2\ln\left(\frac{p_{1}}{\left(1-p_{1}\right)}\cdot\frac{\sigma_{0}}{\sigma_{1}}\right)\\
- & A=\left(\sigma_{0}^{2}-\sigma_{1}^{2}\right)
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section*
-Programing Assignment
-\end_layout
-
-\begin_layout Subsection*
-1.
- Visualizing the Hoeffding bound
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename ../Figure_1.png
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Visualizing the Hoeffding bound
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-2.
- Nearest Neighbor
-\end_layout
-
-\begin_layout Subsubsection*
-2.1 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-Submitted to the programing section of the assignment.
- 
-\end_layout
-
-\begin_layout Subsubsection*
-2.2 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-אחוז הדיוק שהתקבל : 
-\begin_inset Formula $84.6\%$
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-ממסווג רנדומי לחלוטין היה מצופה שאחוז הדיוק יהיה )בתוחלת(
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Formula $10\%$
-\end_inset
-
- שכן יש עשרה מספרים שיכולים להתקבל בהסתברות שווה.
-\end_layout
-
-\begin_layout Subsubsection*
-2.3
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align right
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename ../Figure_2.png
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Prediction accuracy as a function of 
-\begin_inset Formula $k$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\lang hebrew
-ניתן לראות כי ככל ש 
-\begin_inset Formula $k$
-\end_inset
-
- גדל כך אחוז הדיוק קטן.
- ניתן להסביר זאת מפירוש ריצת האלגוריתם באופן הבא : ככל ש 
-\begin_inset Formula $k$
-\end_inset
-
- גדל, 
-\begin_inset Quotes eld
-\end_inset
-
-
-\begin_inset Formula $pool$
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
- התמונות שעומד לרשות המסווג גדול יותר לכן נצפה לראות יותר שגיאות.
- למשל ניתן הסבר שיכול לשכנע: תמונות של הספרה 
-\begin_inset Formula $1$
-\end_inset
-
- ושל הספרה 
-\begin_inset Formula $7$
-\end_inset
-
- יכולות להיות דומות, בהינתן תמונה של הספרה 
-\begin_inset Formula $7$
-\end_inset
-
- שהאלגוריתם מקבל, הוא יחשב מרחקים מהתמונות הקרובות ביותר לפי המרחק האוקלידי.
- אם כן יש סיכוי לא מבוטל כי תמונות שמתוייגות כ 
-\begin_inset Formula $1$
-\end_inset
-
-, קרובות לתמונה שהאלגוריתם קיבל ולכן נמצאות ב 
-\begin_inset Quotes eld
-\end_inset
-
-
-\begin_inset Formula $pool$
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
- התמונות שעומד לרשות המסווג.
- אם התמונות התוייגות כ 
-\begin_inset Formula $1$
-\end_inset
-
- ב 
-\begin_inset Quotes eld
-\end_inset
-
-
-\begin_inset Formula $pool$
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
- הן השכיחות ביותר, האלגוריתם ישגה ויתייג את התמונה כתמונה של הספרה 
-\begin_inset Formula $1$
-\end_inset
-
-.
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
+ ולכן לפי שיטת 
 \lang english
- 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align right
-
+holdout
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
 \lang hebrew
-כבאופן מובהק ניתן לראות כי עבור 
-\begin_inset Formula $k=1$
-\end_inset
-
- מתקבל הדיוק הטוב ביותר.
-\end_layout
-
-\begin_layout Subsubsection*
-2.4
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align right
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename ../Figure_3.png
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Prediction accuracy as a function of 
-\begin_inset Formula $n$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\lang hebrew
-ניתן לראות כי ככל ש 
-\begin_inset Formula $n$
-\end_inset
-
- גדל כך אחוז הדיוק עולה.
- ניתן להסביר שעבור 
-\begin_inset Formula $n$
-\end_inset
-
- קטן, תמונה בעלת 
-\begin_inset Formula $Label=L_{1}$
-\end_inset
-
- הניתנת לאלגוריתם, תהיה קרובה לתמונה מתוייגת בעלת 
-\begin_inset Formula $Label=L_{2}$
-\end_inset
-
- כאשר 
-\begin_inset Formula $L_{1}\neq L_{2}$
-\end_inset
-
- בסיכוי גבוה יותר )כיוון שמספר התמונות להשוות את המרחק קטן יחסית, והאלגוריתם
- קובע עבור התמונה היחידה, עד כדי מרחקים שווים, הקרובה ביותר אליו( .
- ככל שיש יותר מידע כך סביר יותר שתמונה בעלת 
-\begin_inset Formula $Label=L_{1}$
-\end_inset
-
- הניתנת לאלגוריתם, תהיה קרובה ביותר לתמונה מתוייגת בעלת אותו 
-\begin_inset Formula $L_{1}$
-\end_inset
-
-.
+ אנו נבחר בהיפותזה לעיל.
  
 \end_layout
 
 \begin_layout Standard
 
 \lang hebrew
-ניתן לראות שהחל מ 
-\begin_inset Formula $n=2000$
+נשים לב כי ההיפותזה שחזרה קרובה מאוד להיפותזה האופטימלית : 
+\begin_inset Formula 
+\[
+\left[\left(0,0.2\right),\left(0.4,0.6\right),\left(0.8,1\right)\right]
+\]
+
 \end_inset
 
- לערך, תוספת 
-\begin_inset Formula $x$
-\end_inset
 
- תמונות מתוייגות אינה באופן מובהק כמו תוספת ל 
-\begin_inset Formula $100<n<1000$
-\end_inset
-
- ובאופן כללי ניתן לראות שהגרף מתנהג דומה לגרף 
-\begin_inset Formula $\log$
-\end_inset
-
- .
- אפשר להסביר זאת שעבור מספיק תמונות מתוייגות )וכיוון שמספר התיוגים 
-\begin_inset Formula $\left\{ 0,1,\ldots,9\right\} $
-\end_inset
-
- קטן יחסית והתמונות אינן מורכבות, יחסית( האלגוריתם יצליח לקבוע ברמת מובהקות
- טובה את התיוג המתאים.
- 
 \end_layout
 
 \end_body

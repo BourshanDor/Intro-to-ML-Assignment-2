@@ -57,7 +57,7 @@ class Assignment2(object):
         y_true_axis = [] 
         y_empirical_axis = []
 
-        for n in range(m_first,m_last+1,step) : 
+        for n in range(m_first, m_last+1, step) : 
             avg_true_error = 0 
             avg_empirical_error = 0 
             for i in range(T):
@@ -246,23 +246,23 @@ class Assignment2(object):
         return E
     
 
-    def empirical_error(self, I , sample) :
-        print(np.size(sample, 0))
-        
-        s = 0.0
-        
-        for point in sample :
-            x = point[0]
-            label = point[1] 
+    def empirical_error(self, I , samples) :
+
+        number_of_mistake = 0
+        belong_to_interval = False 
+        for sample in samples :
+            x = sample[0]
+            label = sample[1] 
             for interval in I : 
-                if self.belongs_to_interval(interval, x) :
-                    if int(label) != 1 : 
-                        s += 1   
+                if self.belongs_to_interval(interval, x) : 
+                    belong_to_interval = True
+                    if not( int(label) == 1 )  : # The label in the interval define as '1' 
+                        number_of_mistake += 1   
                     break 
-            if int(label) != 0 : 
-                s += 1 
+            if not( int(label) == 0) and not (belong_to_interval) :  # The label outside of the intervals define as '0' 
+                number_of_mistake += 1 
         
-        return s / np.size(sample, 0)
+        return number_of_mistake / np.size(samples, 0)
     
                 
 if __name__ == '__main__':

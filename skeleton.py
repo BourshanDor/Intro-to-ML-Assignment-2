@@ -259,7 +259,7 @@ class Assignment2(object):
                     if not( int(label) == 1 )  : # The label in the interval define as '1' 
                         number_of_mistake += 1   
                     break 
-            if not( int(label) == 0) and not (belong_to_interval) :  # The label outside of the intervals define as '0' 
+            if not (belong_to_interval) and not( int(label) == 0) :  # The label outside of the intervals define as '0' 
                 number_of_mistake += 1 
         
         return number_of_mistake / np.size(samples, 0)

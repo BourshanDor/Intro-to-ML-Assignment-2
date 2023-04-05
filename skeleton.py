@@ -12,9 +12,6 @@ class Assignment2(object):
 
     Please use these function signatures for this assignment and submit this file, together with the intervals.py.
     """
-   
-
-
 
     def sample_from_D(self, m):
         """Sample m data samples from D.
@@ -36,8 +33,6 @@ class Assignment2(object):
         return sample_D
 
 
-
-
     def experiment_m_range_erm(self, m_first, m_last, step, k, T):
         """Runs the ERM algorithm.
         Calculates the empirical error and the true error.
@@ -52,7 +47,6 @@ class Assignment2(object):
             A two dimensional array that contains the average empirical error
             and the average true error for each m in the range accordingly.
         """
-        # TODO: Implement the loop
         x_axis = [] 
         y_true_axis = [] 
         y_empirical_axis = []
@@ -81,8 +75,6 @@ class Assignment2(object):
         plt.show()
 
 
-
-
     def experiment_k_range_erm(self, m, k_first, k_last, step):
         """Finds the best hypothesis for k= 1,2,...,10.
         Plots the empirical and true errors as a function of k.
@@ -93,13 +85,14 @@ class Assignment2(object):
 
         Returns: The best k value (an integer) according to the ERM algorithm.
         """
-        # TODO: Implement the loop
         x_axis = [] 
         y_true_axis = [] 
         y_empirical_axis = []
 
         k_of_the_best_empirical_error =  0
         best_empirical_error = 1 
+        best_hypothesis = []
+        
         sample = self.sample_from_D(m)
         sample_x = sample[:,0] 
         sample_lable = sample[:,1] 
@@ -114,9 +107,12 @@ class Assignment2(object):
             if best_empirical_error > empirical_error : 
                 k_of_the_best_empirical_error = k
                 best_empirical_error = empirical_error
-            print(k)
+                best_hypothesis = interval
+            
 
         print("The best empirical k : %d" % k_of_the_best_empirical_error)
+        print("The best hyposesis that found represent as a set of intervals: ", best_hypothesis)
+
             
         plt.plot(x_axis, y_true_axis, label="True Error")
         plt.plot(x_axis, y_empirical_axis, label="Empirical Error")
@@ -134,7 +130,6 @@ class Assignment2(object):
 
         Returns: The best k value (an integer) found by the cross validation algorithm.
         """
-        # TODO: Implement me
         training_number = int(m*0.8) 
         test_number = m - training_number
 
@@ -144,6 +139,7 @@ class Assignment2(object):
 
         k_of_the_best_empirical_error =  0
         best_empirical_error = 1 
+        best_hypothesis = []
         train_sample = self.sample_from_D(training_number)
         test_sample = self.sample_from_D(test_number)
         train_sample_x = train_sample[:,0] 
@@ -159,9 +155,11 @@ class Assignment2(object):
             if best_empirical_error > empirical_error : 
                 k_of_the_best_empirical_error = k
                 best_empirical_error = empirical_error
-            print(k)
+                best_hypothesis = interval
 
         print("The best empirical k : %d" % k_of_the_best_empirical_error)
+        print("The best hyposesis that found represent as a set of intervals: ", best_hypothesis)
+
             
         plt.plot(x_axis, y_true_axis, label="True Error")
         plt.plot(x_axis, y_empirical_axis, label="Empirical Error")
@@ -182,8 +180,8 @@ class Assignment2(object):
 
         for interval in I : 
             if  self.belongs_to_interval(interval,x):  
-                return .8 
-        return .1
+                return 0.8 
+        return 0.1
 
     def belongs_to_interval(self,interval, x) :
         return interval[0] <= x <= interval[1]   
@@ -249,8 +247,9 @@ class Assignment2(object):
     def empirical_error(self, I , samples) :
 
         number_of_mistake = 0
-        belong_to_interval = False 
+         
         for sample in samples :
+            belong_to_interval = False
             x = sample[0]
             label = sample[1] 
             for interval in I : 
@@ -261,7 +260,7 @@ class Assignment2(object):
                     break 
             if not (belong_to_interval) and not( int(label) == 0) :  # The label outside of the intervals define as '0' 
                 number_of_mistake += 1 
-        
+    
         return number_of_mistake / np.size(samples, 0)
     
                 
